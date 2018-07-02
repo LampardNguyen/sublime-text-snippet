@@ -1,0 +1,651 @@
+{
+    "completions": [{
+        "trigger": "lparse",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lparseFind",
+        "contents": "object.find({\n        success: function(object) {\n           \n      },\n    error: function(model, error) {\n               \n      }\n});"
+    }, {
+        "trigger": "lparseGet",
+        "contents": "object.get(${1:idOnline}, {\n        success: function(object) {\n           \n      },\n    error: function(model, error) {\n               \n      }\n});"
+    }, {
+        "trigger": "lparseSaveAll",
+        "contents": "Parse.Object.saveAll(ArrModal, {\n        success: function(object) {\n           \n      },\n    error: function(model, error) {\n               \n      }\n});"
+    }, {
+        "trigger": "lparseSave",
+        "contents": "${1:object}.save(model, {\n        success: function(object) {\n           \n      },\n    error: function(model, error) {\n               \n      }\n});"
+    }, {
+        "trigger": "lparseQuery",
+        "contents": "var ${1:ObjectName} = Parse.Object.extend('${1:ObjectName}');\nvar object = new Parse.Query(${1:ObjectName});"
+    }, {
+        "trigger": "lparseObject",
+        "contents": "var ${1:ObjectName} = Parse.Object.extend('${1:ObjectName}');\nvar object = new ${1:ObjectName}();"
+    }, {
+        "trigger": "l2-------------",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "l2runGenerate",
+        "contents": "function runGenerate(generation) {\n    const iterator = generation();\n\n    const iterate = (iteration) => {\n        if (iteration.done) {\n            return iteration.value;\n        }\n        const promise = iteration.value;\n        if (iteration.value.then) {\n            promise.then(x => iterate(iterator.next(x)));\n        } else {\n            iterate(iterator.next(promise));\n        }\n    }\n    return iterate(iterator.next());\n}"
+    }, {
+        "trigger": "l2Promise",
+        "contents": "return new Promise((resolve, reject) => {\n    content\n});\n"
+    }, {
+        "trigger": "l2staticfunc",
+        "contents": "static factory() {\n  if (!${1:ClassName}.instance) {\n    ${1:ClassName}.instance = new ${1:ClassName}();\n  }\n  return ${1:ClassName}.instance;\n}"
+    }, {
+        "trigger": "l-------------",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "llongclick",
+        "contents": "var longpress = false;\n\n\\$('button').on('click', function() {\n    (longpress) ? alert('Long Press'): alert('Short Press');\n});\n\nvar startTime, endTime;\n\\$('button').on('mousedown', function() {\n    startTime = new Date().getTime();\n});\n\n\\$('button').on('mouseup', function() {\n    endTime = new Date().getTime();\n    longpress = (endTime - startTime < 500) ? false : true;\n});"
+    }, {
+        "trigger": "lJsonParse",
+        "contents": "JSON.parse(${1:obj});"
+    }, {
+        "trigger": "lquery",
+        "contents": "var ${1:el} = ${2:document}.querySelector('${3:selector}');"
+    }, {
+        "trigger": "lqueryAll",
+        "contents": "var ${1:el} = ${2:document}.querySelectorAll('${3:selector}');"
+    }, {
+        "trigger": "lJsonStringify",
+        "contents": "JSON.stringify(${1:obj});"
+    }, {
+        "trigger": "ldebug",
+        "contents": "debugger;"
+    }, {
+        "trigger": "lstopPropa",
+        "contents": "${1:\\$event}.stopPropagation();"
+    }, {
+        "trigger": "lcl",
+        "contents": "console.log(${1:content});"
+    }, {
+        "trigger": "lcd",
+        "contents": "console.debug(${1:content});"
+    }, {
+        "trigger": "lci",
+        "contents": "console.info(${1:content});"
+    }, {
+        "trigger": "lcw",
+        "contents": "console.warn(${1:content});"
+    }, {
+        "trigger": "lcTs",
+        "contents": "console.time('spend time ${1:n}');"
+    }, {
+        "trigger": "lcTe",
+        "contents": "console.timeEnd('spend time ${1:n}');"
+    }, {
+        "trigger": "lfn",
+        "contents": "/**\n* [${2:functionName} description]\n* @param  [type] ${3:params} [description]\n* @return [type] ${4:body} [description]\n*/\n function ${2:functionName}(${3:params}){\n ${4:body}\n};"
+    }, {
+        "trigger": "lfnn",
+        "contents": "/**\n* [${2:functionName} description]\n* @param  [type] ${3:params} [description]\n* @return [type] ${4:body} [description]\n*/\nvar ${2:functionName} = function(${3:params}){\n\t${4:body}\n};"
+    }, {
+        "trigger": "lfnNoComment",
+        "contents": "function ${2:functionName}(${3:params}){\n ${4:body}\n};"
+    }, {
+        "trigger": "lif",
+        "contents": "if(${1:condition}){\n\t\n}"
+    }, {
+        "trigger": "lelse",
+        "contents": "else{\n\t\n}"
+    }, {
+        "trigger": "lforWhile",
+        "contents": "var length = ${1:list}.length;\nwhile (length > 0) {\n length--;\n     ${2:todo}\n}"
+    }, {
+        "trigger": "lfori",
+        "contents": "for(var i = 0 ; i < ${1:list}.length ; i++){\n       ${2:todo}\n}"
+    }, {
+        "trigger": "lfori-",
+        "contents": "for(var i = ${1:list}.length-1 ; i >= 0 ; i--){\n       ${2:todo}\n}"
+    }, {
+        "trigger": "lforj",
+        "contents": "for(var j = ${1:list}.length-1 ; j >= 0 ; j--){\n       ${2:todo}\n}"
+    }, {
+        "trigger": "lfork",
+        "contents": "for(var k = ${1:list}.length-1 ; k >= 0 ; k--){\n       ${2:todo}\n}"
+    }, {
+        "trigger": "lforEach",
+        "contents": "${1:list}.forEach(function(item){\n     body\n});"
+    }, {
+        "trigger": "lunique",
+        "contents": "var unilist = [];\nvar n = {};\n${1:list}.forEach(function(item) {\n    if (!n[item.valueCompare]) {\n          n[item.valueCompare] = true;\n          unilist.push(item);\n   }\n})"
+    }, {
+        "trigger": "lfor",
+        "contents": "for(var item in ${1:list}){\n   ${2:content}\n};"
+    }, {
+        "trigger": "lswitch",
+        "contents": "switch (${1:condition}) {\n        case ${2:case1}: ${3:content}\n break;\n        default: ${4:content}\n    break;\n}"
+    }, {
+        "trigger": "lsplice",
+        "contents": "${1:list}.splice(${2:index},${3:'0 insert, 1 remove'});"
+    }, {
+        "trigger": "lscriptStringbuilder",
+        "contents": "function StringBuilder(value) {\n  this.strings = new Array('');\n this.append(value);\n}\nStringBuilder.prototype.append = function(value) {\n    if (value) {\n          this.strings.push(value);\n     }\n}\nStringBuilder.prototype.clear = function() {\n    this.strings.length = 1;\n}\nStringBuilder.prototype.toString = function() {\n  return this.strings.join('');\n}\n\n// var sb = new StringBuilder();\n// sb.append('Lorem ipsum dolor sit amet, consectetuer adipiscing elit, ');\n// sb.append('sed diem nonummy nibh euismod tincidunt ut lacreet dolore ');\n// sb.append('magna aliguam erat volutpat.');\n// var s = sb.toString();"
+    }, {
+        "trigger": "lscriptSb",
+        "contents": "var ${1:var} = new StringBuilder();"
+    }, {
+        "trigger": "lscript",
+        "contents": "<script src='' type='text/javascript' charset='utf-8' ></script>"
+    }, {
+        "trigger": "llink",
+        "contents": "<link rel='stylesheet' href=''>"
+    }, {
+        "trigger": "lbackClick",
+        "contents": "if (window.history && window.history.pushState) {\n        window.history.pushState('forward', null, './#forward');\n      \\$(window).on('popstate', function() {\n         alert('Back button was pressed.');\n    });\n}"
+    }, {
+        "trigger": "lbackWindow",
+        "contents": "window.history.back();"
+    }, {
+        "trigger": "lclosetab",
+        "contents": "window.onbeforeunload = function(e) {\n    var e = e || window.event;\n    var msg = 'Do you really want to leave this page?'\n    if (e) {\n              e.returnValue = msg;\n  }\n     return msg;\n};"
+    }, {
+        "trigger": "lconfirm",
+        "contents": "var conform = confirm('${1:yourMessage}');\nif (conform) { \n \n}"
+    }, {
+        "trigger": "lmap",
+        "contents": "${1:newList} = ${2:oldList}.map(function(item, index) {\n   return ${3:content};\n});"
+    }, {
+        "trigger": "levery",
+        "contents": "var isValid = ${1:list}.every(function(item) {\n     return (condition);\n}); \/\/ isValid is true"
+    }, {
+        "trigger": "lsome",
+        "contents": "var isValid = ${1:list}.some(function(item) {\n     return (condition);\n}); \/\/ isValid is true"
+    }, {
+        "trigger": "lfilter",
+        "contents": "var ${1:newList} = ${2:list}.filter(function(item, index, array) {\n     return (condition);\n});\nif (${1:newList} != null && ${1:newList}.length > 0) {\n       ${3:content}\n}"
+    }, {
+        "trigger": "lreduce",
+        "contents": "${1:sum} = ${2:list}.reduce(function(previous, current) {\n   return previous + current;\n}); \/\/ return sum"
+    }, {
+        "trigger": "lsort",
+        "contents": "${1:list}.sort(function(${2:item1}, ${3:item2}) {\n       return ${2:item1} > ${3:item2};\n});"
+    }, {
+        "trigger": "lconcat",
+        "contents": "var newArr = arr1.concat(arr2, arr3);"
+    }, {
+        "trigger": "ltimeout",
+        "contents": "var tout = setTimeout(function() {\n${1:content}\nclearTimeout(tout);}, 100);"
+    }, {
+        "trigger": "lsetInterval",
+        "contents": "var intl = setInterval(function() {\n${1:content}\nclearInterval(intl);}, 100);"
+    }, {
+        "trigger": "lXmlHttpRequest",
+        "contents": "function doPost(url, params, callback) {\n var xhr = new XMLHttpRequest();\n       xhr.open('POST', url, true);\n  xhr.setRequestHeader('Content-Type', 'application/json');\n     xhr.onreadystatechange = function() {\n         if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status <= 300) {\n                     var result = JSON.parse(xhr.responseText);\n                    console.log(result);\n                  if (typeof callback == 'function') {\n                          callback(result);\n                     }\n             }\n     };\n    xhr.timeout = 5000;\n   xhr.ontimeout = function() {\n          console.log('request timed out');\n     };\n    xhr.send(JSON.stringify(params));\n}"
+    }, {
+        "trigger": "lAddEventListener",
+        "contents": "${1:element}.addEventListener('${2:event click, keydown...}', function(event) {\n   ${3:content}\n});"
+    }, {
+        "trigger": "lcallee",
+        "contents": "var thisFunction = arguments.callee\nif (!thisFunction.uid) thisFunction.uid = 0;\n++thisFunction.uid;\nconsole.log(thisFunction.uid);\nreturn thisFunction.uid;"
+    }, {
+        "trigger": "lfnisolate",
+        "contents": "(function() {\n'use strict';\n    ${1:body}\n})();"
+    }, {
+        "trigger": "ldate",
+        "contents": "var dateFull = 'dd-MM-yyyy';\nvar numbers = dateFull.match(\/\\d+\/g);\nvar date = new Date(numbers[2], numbers[1] - 1, numbers[0]);\n"
+    }, {
+        "trigger": "lsubstr",
+        "contents": "string_resource.substr(start, length);"
+    }, {
+        "trigger": "lmaxArr",
+        "contents": "Math.max.apply(Math, ${1:arr}.map(function(o) {\n  return o.${2:attribute};\n}));"
+    }, {
+        "trigger": "lcopy",
+        "contents": "var ${1:newObject} = JSON.parse(JSON.stringify(${2:oldObject}));"
+    }, {
+        "trigger": "langular-js",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lngModule",
+        "contents": "var ${1:appName} = angular.module('${1:appName}',[]);"
+    }, {
+        "trigger": "lngnoop",
+        "contents": "(fnCallback || angular.noop )(result);"
+    }, {
+        "trigger": "lngModule2",
+        "contents": "angular.module('${1:appName}',[]);"
+    }, {
+        "trigger": "lngController",
+        "contents": "${1:appName}.controller('${2:controllerName}Ctrl', ['\\$scope', function(\\$scope) {\n     content\n}]);"
+    }, {
+        "trigger": "lngController2",
+        "contents": "function ${2:controllerName}(SomeService) {\n  this.doSomething = function() {\n\n  };\n  this.doSomething = SomeService.doSomething;\n};\n${2:controllerName}.\\$inject = [];\nangular.module('${1:moduleName}').controller('${2:controllerName}', ${2:controllerName});"
+    }, {
+        "trigger": "lngFactory",
+        "contents": "${1:appName}.factory('${2:factoryName}', ['', function() {\n  var model = {};\n\n  return model;\n}]);"
+    }, {
+        "trigger": "lngFactory2",
+        "contents": "function ${2:factoryName}() {\n\n  var model = {};\n\n  model.someMethod = function() {\n\n  };\n\n  return model;\n};\n${2:factoryName}.$inject = [];\nangular.module('${1:moduleName}').factory('${2:factoryName}', ${2:factoryName});"
+    }, {
+        "trigger": "lngService",
+        "contents": "${1:appName}.service('${2:serviceName}', ['', function() {\n  \n}]);"
+    }, {
+        "trigger": "lngService2",
+        "contents": "function ${2:serviceName}() {\n  this.someMethod = function() {\n\n  };\n};\n${2:serviceName}.\\$inject = [];\nangular.module('${1:moduleName}').service('${2:serviceName}', ${2:serviceName});"
+    }, {
+        "trigger": "lngComponent",
+        "contents": "angular.module('${1:moduleName}', []).component('${2:componentName}', {\n  templateUrl: 'source/app/components/${2:componentName}/${2:componentName}.html',\n  bindings: {\n    \\$router: '<'\n  },\n  \\$routeConfig: [{\n    path: '/projectList',\n    name: 'ProjectList',\n    // component: 'projectList',\n    loader:  function() {\n      // lazy load the user module\n      return window.\\$ocLazyLoad.load(['path']).then(function() {\n        // return the user component name\n        return 'componentName';\n      });\n    },\n    useAsDefault: true\n  }],\n  controller: ${2:componentName}Component,\n  controllerAs: '${2:componentName}',\n  transclude:'true or false',\n  Required:'string'\n});\n${2:componentName}Component.\\$inject = ['\\$router', '\\$ocLazyLoad', '\\$injector'];\n/**\n * [mainComponent description]\n * @param  [type]  [description]\n * @return [type]  [description]\n */\nfunction ${2:componentName}Component(\\$router, \\$ocLazyLoad, \\$injector) {\n  var vm = this;\n  vm.m = {};\n  \\$router.config([{\n    path: '/login',\n    name: 'Login',\n    loader: function() {\n      // lazy load the user module\n      return \\$ocLazyLoad.load(['path']).then(function() {\n        // return the user component name\n        return 'login';\n      });\n    },\n    useAsDefault: true\n  }]);\n  /**\n     * [getSv description]\n     * @param  [type] serviceName [description]\n     * @return [type]  [description]\n     */\n    vm.getSv = function(serviceName) {\n      return \\$injector.get(serviceName);\n    };\n    /**\n  * [$onInit description]\n  * @param  [type]  [description]\n  * @return [type]  [description]\n  */\n  vm.\\$routerOnActivate = function(next, previous){\n    \n  };\n  /**\n  * [$onInit description]\n  * @param  [type]  [description]\n  * @return [type]  [description]\n  */\n  vm.\\$routerOnDeactivate = function(next, previous){\n    \n  };\n  /**\n  * [$onInit description]\n  * @param  [type]  [description]\n  * @return [type]  [description]\n  */\n  vm.\\$routerCanDeactivate = function(next, previous){\n    // If any of the $routerCan... methods return false or a promise that resolves to false, the navigation will be cancelled.\n  };\n  /**\n  * [$onInit description]\n  * @param  [type]  [description]\n  * @return [type]  [description]\n  */\n  vm.\\$routerCanActivate = function(next, previous){\n    // If any of the $routerCan... methods return false or a promise that resolves to false, the navigation will be cancelled.\n  };\n  /**\n  * [$onInit description]\n  * @param  [type]  [description]\n  * @return [type]  [description]\n  */\n  vm.\\$onInit = function(){\n    \n  };\n};"
+    }, {
+        "trigger": "lngRoute",
+        "contents": ".config(function(\\$routeProvider){\n\\$routeProvider.when(${1:URL}, {templateUrl: ${2:templateUrl}, controller: ${3:controller}}).otherwise({redirectTo: ${4:URL}});\n})"
+    }, {
+        "trigger": "lngRouteLink",
+        "contents": "<a ng-link='[]'>Heroes</a><ng-outlet></ng-outlet>"
+    }, {
+        "trigger": "lngRouteGo",
+        "contents": "var link = ['pathName', {\n    id: 1\n}];\nthis.\\$router.navigate(link);"
+    }, {
+        "trigger": "lngDirective",
+        "contents": "${1: mymodule}.directive('${2:directiveName}',['' ,function() {\n  return {\n    restrict: 'string',\n    priority: number,\n    template: string,\n    templateUrl: string,\n    replace: bool,\n    transclude: bool,\n    scope: bool (true is inherit from parent) or object ({} use a new isolate),\n    require: string,\n    controller: function(\\$scope, \\$element, \\$attrs, \\$transclude) {},\n    link: function(scope, iElement, iAttrs) {},\n    compile: function(tElement, tAttrs, transclude) {\n      return {\n        pre: function(scope, iElement, iAttrs, controller) {},\n        post: function(scope, iElement, iAttrs, controller) {}\n      }\n    }\n  };\n}]);"
+    }, {
+        "trigger": "lngTimeout",
+        "contents": "var ngtout = \\$timeout(function(){\n\t${1:content}\n\\$timeout.cancel(ngtout);},100);"
+    }, {
+        "trigger": "lngfn",
+        "contents": "/**\n* [${2:functionName} description]\n* @param  [type] ${3:params} [description]\n* @return [type] ${4:body} [description]\n*/\n${1:\\$scope}.${2:functionName} = function(${3:params}){\n\t${4:body}\n};"
+    }, {
+        "trigger": "lngfnn",
+        "contents": "function(${2:params}){\n\t${3:body}\n};"
+    }, {
+        "trigger": "lscope",
+        "contents": "\\$scope.${1:name}"
+    }, {
+        "trigger": "lngdoPost",
+        "contents": "commonService.doPost('${1:url}', params, {\n    success: function(result) {\n        ${2:body}\n        (fnCallback || angular.noop)(result);\n    }\n});"
+    }, {
+        "trigger": "lngdoPost2",
+        "contents": "var param = {\n\n};\ncommonService.doPost('${1:url}', param, {\n       success: function(res) {\n              \n      }\n});"
+    }, {
+        "trigger": "lngfilter",
+        "contents": "var ${1:objectFilter} = \\$filter('filter')(${2:listFilter}, {\n\t\t'${3:cdFilter}' : ${4:valueFilter}\n\t});\nif (angular.isDefined(${1:objectFilter}) && ${1:objectFilter} != null && ${1:objectFilter}.length > 0){\n\t${5:todo}\n}"
+    }, {
+        "trigger": "lngOrderBy",
+        "contents": "var orderBy = \\$filter('orderBy');\n${1:list} = orderBy(${1:list}, ${2:columnName}, ${3:true||false});"
+    }, {
+        "trigger": "lngwatch",
+        "contents": "\\$scope.\\$watch('${1:modelWatch}', function(newValue, oldValue) {\n        if (angular.isDefined(oldValue) && oldValue != null && oldValue != '' && angular.isDefined(newValue) && newValue != null && newValue != '' && newValue != oldValue ) {\n\n   }\n});"
+    }, {
+        "trigger": "lngapply",
+        "contents": "\\$scope.\\$apply(function() {\n       \n});"
+    }, {
+        "trigger": "lngdigest",
+        "contents": "\\$scope.\\$digest(function() {\n       \n});"
+    }, {
+        "trigger": "lngwatchcollection",
+        "contents": "\\$scope.\\$watchCollection('${1:modelWatch}', function(newValue) {\n\t${2:todo}\n});"
+    }, {
+        "trigger": "lngbroadFn",
+        "contents": "\\$rootScope.\\$broadcast(${1:broadcastName}, function(params) {\n\t${2:body}\n});"
+    }, {
+        "trigger": "lngbroadParams",
+        "contents": "\\$rootScope.\\$broadcast(${1:broadcastName}, params);"
+    }, {
+        "trigger": "lngbroadParamsFn",
+        "contents": "\\$rootScope.\\$broadcast(${1:broadcastName}, params, function(params) {\n\t${2:body}\n});"
+    }, {
+        "trigger": "lngemitFn",
+        "contents": "\\$scope.\\$emit(${1:emitName}, function(params) {\n        body\n});"
+    }, {
+        "trigger": "lngemitParams",
+        "contents": "\\$scope.\\$emit(${1:emitName}, params);"
+    }, {
+        "trigger": "lngscopeOnFn",
+        "contents": "\\$scope.\\$on(${1:onName}, function(evt, params) {\n\t${2:body}\n});"
+    }, {
+        "trigger": "lngscopeOnCallback",
+        "contents": "\\$scope.\\$on(${1:onName}, function(evt, callback) {\n\t${2:callbackFn}\n});"
+    }, {
+        "trigger": "lngscopeOnFnCallback",
+        "contents": "\\$scope.\\$on(${1:onName}, function(evt, params, callback) {\n\t${2:body}\n});"
+    }, {
+        "trigger": "lngfactoryStringbuilder",
+        "contents": "${1:module}.factory('StringBuilder', function() {\n var strings = new Array();\n var StringBuilder = {\n append: function(value) {\n if (value) {\n strings.push(value);\n }\n },\n toString: function() {\n if (strings.length >= 0) {\n var s = strings.join('');\n return s;\n }\n },\n clear: function() {\n strings.length = 0;\n return strings;\n }\n };\n return StringBuilder;\n});\n"
+    }, {
+        "trigger": "lngmodelStringbuilder",
+        "contents": "var strings = new Array();\nmodel.StringBuilder = {\n      append: function(value) {\n             if (value) {\n                  strings.push(value);\n          }\n     },\n    toString: function() {\n                if (strings.length >= 0) {\n                    var s = strings.join('');\n                     return s;\n             }\n     },\n    clear: function() {\n           strings.length = 0;\n           return strings;\n       }\n};"
+    }, {
+        "trigger": "lngVarSb",
+        "contents": "var ${1:var} = \\$scope.model.StringBuilder;"
+    }, {
+        "trigger": "lngForEach",
+        "contents": "angular.forEach(${1:list}, function(item) {\n     body\n})"
+    }, {
+        "trigger": "lngSort",
+        "contents": "var orderBy = $filter('orderBy');\n${1:list} = orderBy(${1:list}, '${2:sortField}', false);"
+    }, {
+        "trigger": "lngHttpGet",
+        "contents": "\\$http.get(${1:url}).success(function(data, status, headers, config) {\n        \n}).error(function(data, status, headers, config) {\n        \n});"
+    }, {
+        "trigger": "lngHttpPost",
+        "contents": "\\$http.post(${1:url}, params).success(function(data, status, headers, config) {\n       \n}).error(function(data, status, headers, config) {\n        \n});"
+    }, {
+        "trigger": "lngbind",
+        "contents": "element.bind( 'mouseenter mouseleave', function() {\n  content\n});"
+    }, {
+        "trigger": "lngbind1",
+        "contents": "element.bind({\n click: function() {\n           content\n       },\n    mouseenter: function() {\n              content\n       }\n});"
+    }, {
+        "trigger": "lngunbind",
+        "contents": "element.unbind( 'click' );"
+    }, {
+        "trigger": "lngon",
+        "contents": "element.on('click', function() {\n        alert(\\$(this).text());\n});"
+    }, {
+        "trigger": "lngdebug",
+        "contents": "log.debug(${1:content});"
+    }, {
+        "trigger": "lnginfo",
+        "contents": "log.info(${1:content});"
+    }, {
+        "trigger": "lngwarn",
+        "contents": "log.warn(${1:content});"
+    }, {
+        "trigger": "lngerror",
+        "contents": "log.error(${1:content});"
+    }, {
+        "trigger": "lngstopevent",
+        "contents": "event.stopPropagation();"
+    }, {
+        "trigger": "lnginjector",
+        "contents": "var ${1:\\$http}=\\$injector.get('${1:\\$http}');"
+    }, {
+        "trigger": "lngcssngcloak",
+        "contents": "[ng\\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {\n       display: none !important;\n}"
+    }, {
+        "trigger": "lngparse",
+        "contents": "\\$parse('${1:expression}')(\\$scope)"
+    }, {
+        "trigger": "lngthen",
+        "contents": "then(function(result) {\n\n}, function(err) {\n   \n});"
+    }, {
+        "trigger": "lngfilterDate",
+        "contents": "var day =  \\$filter('date')(new Date(), '${1:yyyy-MM-dd}');"
+    }, {
+        "trigger": "lngRouteUi",
+        "contents": "appModule.config(['\\$stateProvider', '\\$urlRouterProvider', '\\$locationProvider', function(\\$stateProvider, \\$urlRouterProvider, \\$locationProvider) {\n \\$stateProvider.state('${6:state}', {\n        url: '${1:url}',\n      templateUrl: '${2:templateUrl}',\n      controller: '${3:controller}',\n        title: '${4:title}'\n   });\n   \\$urlRouterProvider.otherwise('${5:url}');\n   \\$locationProvider.html5Mode(true);\n}]);"
+    }, {
+        "trigger": "lngRouteUiChild",
+        "contents": "\\$stateProvider.state('${6:state}', {\n   url: '${1:url}',\n  views: {\n      '${2:viewChild}': {\n           templateUrl: '${3:templateUrl}'\n       }\n },\n    controller: '${4:controller}',\n    title: '${5:title}'\n});"
+    }, {
+        "trigger": "lngselect",
+        "contents": "<select name='mySelect' id='mySelect'      ng-options='option.name for option in data.availableOptions track by option.id'      ng-model='data.selectedOption'></select>"
+    }, {
+        "trigger": "lexex",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lexdopost",
+        "contents": "commonService.doPost(\n    action: ${1:action},\n       params: param,\n        callback: {\n      success:function(result) {\n\n    }\n}\n);"
+    }, {
+        "trigger": "lexpress-js",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lefne",
+        "contents": "function(req, res, next){\n\t${3:body}\n}"
+    }, {
+        "trigger": "lefnen",
+        "contents": "function(${1:params}){\n\t${3:body}\n}"
+    }, {
+        "trigger": "leappget",
+        "contents": "${1:router}.get('${2:url}',function(req, res, next){\n\t${3:body}\n});"
+    }, {
+        "trigger": "leapppost",
+        "contents": "${1:router}.post('${2:url}',function(req, res, next){\n\t${3:body}\n});"
+    }, {
+        "trigger": "lemodelCreateMongoDb",
+        "contents": "var mongoose = require('mongoose'),\n\tSchema = mongoose.Schema;\nvar ${1:model}Schema = new Schema({\n\t${2:property}:{type:${3:String},required:${4:true}},\n\t${5:property2}:{type:${6:String},required:${7:true}}\n});\n${1:model}Schema.index({${2:property}:1},{unique:true});\n${1:model}Schema.virtual('Created').get(function(){return this._id.getTimestamp();});\nmongoose.model('${8:modelUpper}',${1:model}Schema);"
+    }, {
+        "trigger": "lecontrollerRequire",
+        "contents": "var express = require('express'),\n\trouter = express.Router(),\n\tmongoose = require('mongoose'),\n\t${1:modelName} = mongoose.model('${2:modelUpper}');\n\nmodule.exports = function (app) {\n\tapp.use('/', router);\n};\nvar ${3:controllerName} = './${3:controllerName}/'; "
+    }, {
+        "trigger": "lesend",
+        "contents": "res.send(${1:content});"
+    }, {
+        "trigger": "lerequire",
+        "contents": "require(${1:path});"
+    }, {
+        "trigger": "lesession",
+        "contents": "session"
+    }, {
+        "trigger": "lother",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lgetPatient",
+        "contents": "\\$rootScope.\\$broadcast('COM1100#getPatient', function(patientInfo) {\n\t${1:body}\n});"
+    }, {
+        "trigger": "lgetInfo",
+        "contents": "\\$rootScope.\\$broadcast('COM1000#getInfo',function(headerInfo)  {\n\t${1:body}\n});"
+    }, {
+        "trigger": "ltryjava",
+        "contents": "try{\n\t${1:content}\n}catch(BusinessException ex){\n\tmodelOutput = new ${2:model}();\n\tmodelOutput.setErrorMessage(ex.getMessage());\n}"
+    }, {
+        "trigger": "lejs",
+        "contents": "<% ${1:content} %>"
+    }, {
+        "trigger": "ljquery",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "ljajax",
+        "contents": "\\$.ajax({\n url: 'script.php',\n    type: 'POST',\n data: {\n               id: menuId\n    },\n    dataType: 'html',\n     beforeSend: function(xhr) {\n           xhr.overrideMimeType('text/plain; charset=x-user-defined');\n   }\n}).done(function(data) {\n   if (console && console.log) {\n         console.log('Sample of data:', data.slice(0, 100));\n   }\n});"
+    }, {
+        "trigger": "ljbind",
+        "contents": "\\$( '#foo' ).bind( 'mouseenter mouseleave', function() {\n  content\n});"
+    }, {
+        "trigger": "ljbind1",
+        "contents": "\\$('#foo').bind({\n click: function() {\n           content\n       },\n    mouseenter: function() {\n              content\n       }\n});"
+    }, {
+        "trigger": "ljunbind",
+        "contents": "\\$( '#foo' ).unbind( 'click' );"
+    }, {
+        "trigger": "ljon",
+        "contents": "\\$('p').on('click', function() {\n        alert(\\$(this).text());\n});"
+    }, {
+        "trigger": "ljresize",
+        "contents": "\\$(window).resize(function(event) {\n       content\n});"
+    }, {
+        "trigger": "ljscroll",
+        "contents": "\\$( '#target' ).scroll(function(event) {\n  content\n});"
+    }, {
+        "trigger": "ljdocumentReady",
+        "contents": "\\$( document ).ready(function() {\n  content\n});"
+    }, {
+        "trigger": "ljload",
+        "contents": "\\$( 'img.userIcon' ).load(function() {\n  if ( \\$( this ).height() > 100) {\n    \\$( this ).addClass( 'bigImg' );\n  }\n});"
+    }, {
+        "trigger": "ljKeyDown",
+        "contents": "\\$( '#target' ).keydown(function() {\n  alert( 'Handler for .keydown() called.' );\n});"
+    }, {
+        "trigger": "ljMap",
+        "contents": "var newList = \\$.map(arr, function(item) {\n   return content;\n});"
+    }, {
+        "trigger": "ljeach",
+        "contents": "\\$.each(${1:list}, function(index, item) {\n  ${2:body}\n})"
+    }, {
+        "trigger": "ljPlugin",
+        "contents": "/**\n *  @name plugin\n *  @description description\n *  @version 1.0\n *  @options\n *    option\n *  @events\n *    event\n *  @methods\n *    init\n *    publicMethod\n *    destroy\n */\n;(function(\\$, window, undefined) {\n  'use strict';\n\n  var pluginName = 'plugin',\n  customEvent = 'customEvent';\n  var privateVar = null;\n  var privateMethod = function(el, options) {\n    // to do\n  };\n\n  function Plugin(element, options) {\n    this.element = \\$(element);\n    this.options = \\$.extend({}, \\$.fn[pluginName].defaults, this.element.data(), options);\n    this.init();\n  }\n\n  Plugin.prototype = {\n    init: function() {\n      var that = this;\n      this.vars = {\n        key: 'value'\n      };\n      // initialize\n      // add events\n    },\n    publicMethod: function(params) {\n      // to do\n      \\$.isFunction(this.options.onCallback) && this.options.onCallback();\n      this.element.trigger(customEvent);\n    },\n    destroy: function() {\n      // remove events\n      // deinitialize\n      \\$.removeData(this.element[0], pluginName);\n    }\n  };\n\n  \\$.fn[pluginName] = function(options, params) {\n    return this.each(function() {\n      var instance = \\$.data(this, pluginName);\n      if (!instance) {\n        \\$.data(this, pluginName, new Plugin(this, options));\n      } else if (instance[options]) {\n        instance[options](params);\n      }\n    });\n  };\n\n  \\$.fn[pluginName].defaults = {\n    key: 'value',\n    onCallback: null\n  };\n\n  \\$(function() {\n    \\$('[data-' + pluginName + ']').on(customEvent, function() {\n      // to do\n    });\n\n    \\$('[data-' + pluginName + ']')[pluginName]({\n      key: 'custom'\n    });\n  });\n\n}(jQuery, window));\n"
+    }, {
+        "trigger": "ljProject",
+        "contents": "/**\n * Global variables and functions\n */\nvar ${1:ProjectName} = (function(\\$, window, undefined) {\n  var privateVar = 1;\n\n function privateMethod1() {};\n return {\n      publicVar: 1,\n     publicObj: {\n          var1: 1,\n          var2: 2\n       },\n        publicMethod1: privateMethod1\n };\n})(jQuery, window);"
+    }, {
+        "trigger": "lReactjs",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lRcreateClass",
+        "contents": "var R${1:element} = React.createClass({\n        getInitialState: function() {\n   return {\n              \n      };\n},\ncomponentDidMount: function() {\n\n},\nrender: function() {\n          return (${2:content});\n       }\n});\nvar myElement = <R${1:element} /> ;\nReact.render(myElement, ${3:whereToBind});"
+    }, {
+        "trigger": "lRrender",
+        "contents": "React.render(<${1:classReact} />,${2:whereToBind});"
+    }, {
+        "trigger": "lionic",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "ltest",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "ltestdescribe",
+        "contents": "describe('${1:title}', function() {\n  ${2:body}\n});"
+    }, {
+        "trigger": "ltestit",
+        "contents": "it('${1:result must be}', function() {\n  ${2:body}\n });"
+    }, {
+        "trigger": "ltestbeforEarch",
+        "contents": "beforeEach(function() {\n \n});"
+    }, {
+        "trigger": "ltestcontroller",
+        "contents": "describe('${1:controller}', function() {\n      var \\$rootScope, \\$scope, controller;\n   beforeEach(function() {\n               angular.mock.module('alModule');\n           angular.mock.inject(function(\\$injector) {\n                  \\$rootScope = \\$injector.get('\\$rootScope');\n                     \\$scope = \\$rootScope.\\$new();\n                   controller = \\$injector.get('\\$controller')('${1:controller}', {\n                             \\$scope: \\$scope\n                        });\n           });\n   });\n});"
+    }, {
+        "trigger": "ltestExpectEqual",
+        "contents": "expect(${1:variable1}).toEqual(${2:variable2});"
+    }, {
+        "trigger": "lrequirejs",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lrjDefine",
+        "contents": "define([]function (){\n ${1}\n});"
+    }, {
+        "trigger": "lrjconfig",
+        "contents": "require.config({\n paths: {\n              '${1:pathName}': '${2:path}'\n  },\n    shim: {\n               '${3:moduleName}': {\n                  deps: []\n              }\n     }\n});\nrequire(['${4:pathName}'], function() {\n       angular.bootstrap(document, ['${5:mainModule}']);\n});"
+    }, {
+        "trigger": "lrjrequire",
+        "contents": "require(['${4:pathName}'], function() {\n  ${5}\n});"
+    }, {
+        "trigger": "llaravel",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "llrouteget",
+        "contents": "Route::get('${1:name}', function () {\n    return ${2:view('welcome')};\n});"
+    }, {
+        "trigger": "llroutepost",
+        "contents": "Route::post('${1:name}', function () {\n    return ${2:view('welcome')};\n});"
+    }, {
+        "trigger": "llfn",
+        "contents": "/**\n* [${1:functionName} description]\n* @param  [type] ${2:params} [description]\n* @return [type] ${3:body} [description]\n*/\npublic function ${1:functionName}(${2:params}){\n return view(${3:body})\n}"
+    }, {
+        "trigger": "llfnpost",
+        "contents": "public function ${1:functionName}(Request \\$request){\n \\$data = \\$request->all();\n return view(${3:body})\n}"
+    }, {
+        "trigger": "llview",
+        "contents": "view('${1:view}')->with('${2:name}', ${3:variable})"
+    }, {
+        "trigger": "llformselec",
+        "contents": "Form::select('${1:name}', ${2:value}, null, [${3:attribute}]);"
+    }, {
+        "trigger": "llform",
+        "contents": "Form::${1:control}('${2:name}', ${3:value}, [${4:attribute}]);"
+    }, {
+        "trigger": "llquery",
+        "contents": "\\$${1:variable} = DB::select('${2:query}');"
+    }, {
+        "trigger": "lllog",
+        "contents": "Log::debug(${1:content});"
+    }, {
+        "trigger": "lljson",
+        "contents": "return response()->json(${1:result});"
+    }, {
+        "trigger": "lgulp",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lgtask",
+        "contents": "gulp.task('${1:taskName}', ['${2:ortherTask}'], function() {\n\t${3:body}\n});"
+    }, {
+        "trigger": "lgsrc",
+        "contents": "gulp.src('${1:source}');"
+    }, {
+        "trigger": "lphp",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lpforeach",
+        "contents": "foreach (\\$${1:array} as &\\$${2:item}) {\n    \n};"
+    }, {
+        "trigger": "lpfori-",
+        "contents": "\\$length = count(\\$${1:array});\nfor(\\$i = \\$length - 1 ; \\$i >= 0 ; \\$i--){\n    \n}"
+    }, {
+        "trigger": "lpdatediff",
+        "contents": "\\$ngay_bat_dau = strtotime('ngay_bat_dau');\n          \\$ngay_ket_thuc = strtotime('ngay_ket_thuc');\n            \\$datediff = \\$ngay_ket_thuc - \\$ngay_bat_dau;\n             echo floor(\\$datediff/(60*60*24));"
+    }, {
+        "trigger": "lpIndexof",
+        "contents": "strpos(${1:str_source}, ${2:str_find});"
+    }, {
+        "trigger": "lpSubstr",
+        "contents": "substr(${1:str_source}, start, length);"
+    }, {
+        "trigger": "lpstrtotime",
+        "contents": "strtotime('mm/dd/yyyy ; yyyy/mm/dd ; dd-mm-yyyy ; yyyy-mm-dd');"
+    }, {
+        "trigger": "lngg",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lnggImport",
+        "contents": "import {${1:Component}} from '${2:angular2/core}';"
+    }, {
+        "trigger": "lnggImportRoute",
+        "contents": "import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router, RouterOutlet } from 'angular2/router';\n@RouteConfig([ \n  {path: '/${1:path}', name: '${2:name}', component: ${3:name}Component${4:, useAsDefault: true}} \n])"
+    }, {
+        "trigger": "lnggRoutePath",
+        "contents": "{path: '/${1:path}', name: '${2:name}', component: ${3:name}Component}"
+    }, {
+        "trigger": "lnggRouteGo",
+        "contents": "/*constructor(\n  private router: Router) {\n}*/\nlet link = ['${1:pathName}', {\n id: 1\n}];\nthis.router.navigate(link);"
+    }, {
+        "trigger": "lnggExport",
+        "contents": "export class ${1:name}Component {\n  \n}"
+    }, {
+        "trigger": "lnggExportImplement",
+        "contents": "export class ${1:name}Component implements ${2:OnInit} {\n constructor(private _router: Router, private _heroService: HeroService) {}\n    ngOnInit() {\n      //TODO\n    }\n}"
+    }, {
+        "trigger": "lnggComponent",
+        "contents": "@Component({selector: '${1:selector}',\n     viewProviders: [MyService, provide(...)],\/\/Array of dependency injection providers scoped to this component's view.\n template: 'Hello {{name}}',\/\/Inline template \/ external template URL of the component's view.\n      templateUrl: 'my-component.html',\n     styles: ['.primary {color: red}'],\/\/List of inline CSS styles \/ external stylesheet URLs for styling component’s view.\n     styleUrls: ['my-component.css'],\n      directives: [MyDirective, MyComponent],\/\/List of directives used in the the component’s template.\n   pipes: [MyPipe, OtherPipe],\/\/List of pipes used in the component's template.\n})"
+    }, {
+        "trigger": "lnggInterface",
+        "contents": "interface ${1:interfaceName} {\n  ${2:columnName}: ${3:dataType};\n}"
+    }, {
+        "trigger": "lnggInjectable",
+        "contents": "@Injectable()"
+    }, {
+        "trigger": "lnggBootstrap",
+        "contents": "import {bootstrap} from 'angular2/platform/browser';\nimport {ROUTER_PROVIDERS} from 'angular2/router';\nimport {HeroService} from './hero.service';\nimport {AppComponent} from './app.component';\n\nbootstrap(AppComponent, [\n  ROUTER_PROVIDERS,\n  HeroService\n]);"
+    }, {
+        "trigger": "lnggConstructor",
+        "contents": "constructor(private _router: Router) { }"
+    }, {
+        "trigger": "lnggSystemConfig",
+        "contents": "System.config({\n  transpiler: 'typescript',\n typescriptOptions: {\n      emitDecoratorMetadata: true\n   },\n    packages: {\n       'app': {\n          defaultExtension: 'ts'\n        }\n }\n});\nSystem.import('app/main').then(null, console.error.bind(console));"
+    }, {
+        "trigger": "lnggService",
+        "contents": "import { \n    Injectable \n} \nfrom 'angular2/core'; \n@Injectable() \nexport class ${1:name}Service {}"
+    }, {
+        "trigger": "lnggRouterLink",
+        "contents": "<a [routerLink]='[]'>${1:name}</a>${2:<router-outlet></router-outlet>}"
+    }, {
+        "trigger": "lnggStateGo",
+        "contents": "let link = ['${1:stateName}', {\n  id: id\n}];\nthis._router.navigate(link);"
+    }, {
+        "trigger": "lnggfn",
+        "contents": "/**\n* [${1:functionName} description]\n* @param  [type] ${2:params} [description]\n* @return [type] ${3:body} [description]\n*/\nprivate ${1:functionName}(${2:params}) {\n    ${3:body}\n};"
+    }, {
+        "trigger": "lbb",
+        "contents": "======================================================================================================="
+    }, {
+        "trigger": "lbModel",
+        "contents": "${1:BackboneModel} = Backbone.Model.extend({\n    urlRoot: '',\n    url: '',\n    idAttribute: '_id',\n    constructor() {\n\n    },\n    parse(response, options) {\n\n    },\n    defaults: {\n        title: null\n    },\n    validate(attrs, options) {\n        if (!attrs.title) {\n            return 'Title is reuired';\n        }\n    }\n});\n\n${2:backboneModelInstance} = new ${1:BackboneModel}();\n"
+    }, {
+        "trigger": "lbModel2",
+        "contents": "import { Model } from 'backbone';\nclass ${1:ModelName} extends Model {\n    constructor(models, options) {\n        super(models, options);\n        this.urlRoot = 'http://localhost:4000/todos';\n        this.url = '';\n        this.idAttribute = 'id';\n    }\n    defaults() {\n        return {\n            title: '',\n            completed: false\n        }\n    }\n    validate(attrs, options) {\n        if (!attrs.title) {\n            return 'Title is reuired';\n        }\n    }\n}\nexport default ${1:ModelName};\n"
+    }, {
+        "trigger": "lbCollection",
+        "contents": "${1:CollectionModel} = Backbone.Collection.extend({\n    model: Model,\n    url: '',\n    comparator: '',\n    constructor() {\n\n    },\n    parse(response, options) {\n\n    },\n});\n${2:CollectionModelInstance} = new ${1:CollectionModel}();\n"
+    }, {
+        "trigger": "lbCollection2",
+        "contents": "import { Collection } from 'backbone';\nclass ${1:CollectionName} extends Collection {\n    constructor(models, options) {\n        super(models, options);\n        this.model = Model;\n        this.url = 'http://localhost:4000/todos';\n        // Todos are sorted by their original insertion order.\n        this.comparator = 'order';\n    }\n    parse(response, options) {\n\n    }\n}\n\nexport default new ${1:CollectionName}();\n"
+    }, {
+        "trigger": "lbRouter",
+        "contents": "${1:AppRouter} = Backbone.Router.extend({\n    routes: {\n        'help': 'help',\n        'search/:query': 'search',\n        'search/:query/p:page': 'search'\n    },\n    constructor() {\n\n    },\n    open(id) {\n\n    },\n    execute: function(callback, args, name) {\n        if (!loggedIn) {\n            goToLogin();\n            return false;\n        }\n        args.push(parseQueryString(args.pop()));\n        if (callback) callback.apply(this, args);\n    },\n    help() {\n\n    },\n    search(query, page) {\n\n    }\n});\n${2:router} = new ${1:AppRouter}();\nBackbone.history.start();\n"
+    }, {
+        "trigger": "lbView",
+        "contents": "${1:ViewBackbone} = Backbone.View.extend({\n    tagName: 'li',\n    id: '',\n    className: 'document-row',\n    el: '',\n    model: Model,\n    collection: Collection,\n    attributes: {\n        'data-id': 'abc-def'\n    },\n    template: _.template('#template'),\n    events: {\n        'click .icon': 'open',\n        'click .button.edit': 'openEditDialog'\n    },\n    constructor: function() {\n        this.listenTo(this.model, 'change', this.render);\n    },\n    render: function() {\n        this.$el.html(this.template(this.model.attributes));\n        return this;\n    },\n    open() {\n\n    },\n    openEditDialog() {\n\n    }\n});\n${2:viewBackbone} = new ${1:ViewBackbone}();\n"
+    }, {
+        "trigger": "lbView2",
+        "contents": "const temp = require('...');\nimport { View } from 'backbone';\nclass ${1:ViewName} extends View {\n    constructor(models, options) {\n        super(models, options);\n        this.template = _.template(temp);\n        this.id = '';\n        this.className = '';\n        this.model = Model;\n        this.collection = Collection;\n        this.attributes = {\n            'data-id': 'abc-def'\n        };\n        //code after init is here\n\n    }\n\n    tagName() {\n        return 'li';\n    }\n\n    events() {\n        return {\n            'click .toggle': 'toggleCompleted'\n        }\n    }\n    el() {\n        return '.todoapp';\n    }\n    render() {\n\n        return this;\n    }\n}\nexport default ${1:ViewName};\n"
+    }, ]
+}

@@ -1,0 +1,1521 @@
+{
+    "_lparse": {
+        "prefix": "_lparse",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lparse"
+    },
+    "_lparseFind": {
+        "prefix": "_lparseFind",
+        "body": [
+            "object.find({", "success: function(object) {", "", "},", "error: function(model, error) {", "", "}", "});"
+        ],
+        "description": "_lparseFind"
+    },
+    "_lparseGet": {
+        "prefix": "_lparseGet",
+        "body": [
+            "object.get(${1:idOnline}, {", "success: function(object) {", "", "},", "error: function(model, error) {", "", "}", "});"
+        ],
+        "description": "_lparseGet"
+    },
+    "_lparseSaveAll": {
+        "prefix": "_lparseSaveAll",
+        "body": [
+            "Parse.Object.saveAll(ArrModal, {", "success: function(object) {", "", "},", "error: function(model, error) {", "", "}", "});"
+        ],
+        "description": "_lparseSaveAll"
+    },
+    "_lparseSave": {
+        "prefix": "_lparseSave",
+        "body": [
+            "${1:object}.save(model, {", "success: function(object) {", "", "},", "error: function(model, error) {", "", "}", "});"
+        ],
+        "description": "_lparseSave"
+    },
+    "_lparseQuery": {
+        "prefix": "_lparseQuery",
+        "body": [
+            "var ${1:ObjectName} = Parse.Object.extend('${1:ObjectName}');", "var object = new Parse.Query(${1:ObjectName});"
+        ],
+        "description": "_lparseQuery"
+    },
+    "_lparseObject": {
+        "prefix": "_lparseObject",
+        "body": [
+            "var ${1:ObjectName} = Parse.Object.extend('${1:ObjectName}');", "var object = new ${1:ObjectName}();"
+        ],
+        "description": "_lparseObject"
+    },
+    "_l2-------------": {
+        "prefix": "_l2-------------",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_l2-------------"
+    },
+    "_l2runGenerate": {
+        "prefix": "_l2runGenerate",
+        "body": [
+            "function runGenerate(generation) {", "const iterator = generation();", "", "const iterate = (iteration) => {", "if (iteration.done) {", "return iteration.value;", "}", "const promise = iteration.value;", "if (iteration.value.then) {", "promise.then(x => iterate(iterator.next(x)));", "} else {", "iterate(iterator.next(promise));", "}", "}", "return iterate(iterator.next());", "}"
+        ],
+        "description": "_l2runGenerate"
+    },
+    "_l2Promise": {
+        "prefix": "_l2Promise",
+        "body": [
+            "return new Promise((resolve, reject) => {", "content", "});", ""
+        ],
+        "description": "_l2Promise"
+    },
+    "_l2staticfunc": {
+        "prefix": "_l2staticfunc",
+        "body": [
+            "static factory() {", "if (!${1:ClassName}.instance) {", "${1:ClassName}.instance = new ${1:ClassName}();", "}", "return ${1:ClassName}.instance;", "}"
+        ],
+        "description": "_l2staticfunc"
+    },
+    "_l2fn": {
+        "prefix": "_l2fn",
+        "body": [
+            "const ${1:functionName} = (${2:params}) => {", "    ", "}"
+        ],
+        "description": "_l2fn"
+    },
+    "_l2perfomance": {
+        "prefix": "_l2perfomance",
+        "body": [
+            "const t1 = performance.now();", "const t2 = performance.now();", "console.log(t2 - t1);"
+        ],
+        "description": "_l2perfomance"
+    },
+    "_l-------------": {
+        "prefix": "_l-------------",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_l-------------"
+    },
+    "_llongclick": {
+        "prefix": "_llongclick",
+        "body": [
+            "var longpress = false;", "", "\\$('button').on('click', function() {", "(longpress) ? alert('Long Press'): alert('Short Press');", "});", "", "var startTime, endTime;", "\\$('button').on('mousedown', function() {", "startTime = new Date().getTime();", "});", "", "\\$('button').on('mouseup', function() {", "endTime = new Date().getTime();", "longpress = (endTime - startTime < 500) ? false : true;", "});"
+        ],
+        "description": "_llongclick"
+    },
+    "_lJsonParse": {
+        "prefix": "_lJsonParse",
+        "body": [
+            "JSON.parse(${1:obj});"
+        ],
+        "description": "_lJsonParse"
+    },
+    "_lquery": {
+        "prefix": "_lquery",
+        "body": [
+            "var ${1:el} = ${2:document}.querySelector('${3:selector}');"
+        ],
+        "description": "_lquery"
+    },
+    "_lqueryAll": {
+        "prefix": "_lqueryAll",
+        "body": [
+            "var ${1:el} = ${2:document}.querySelectorAll('${3:selector}');"
+        ],
+        "description": "_lqueryAll"
+    },
+    "_lJsonStringify": {
+        "prefix": "_lJsonStringify",
+        "body": [
+            "JSON.stringify(${1:obj});"
+        ],
+        "description": "_lJsonStringify"
+    },
+    "_ldebug": {
+        "prefix": "_ldebug",
+        "body": [
+            "debugger;"
+        ],
+        "description": "_ldebug"
+    },
+    "_lstopPropa": {
+        "prefix": "_lstopPropa",
+        "body": [
+            "${1:\\$event}.stopPropagation();"
+        ],
+        "description": "_lstopPropa"
+    },
+    "_lpreventDefault": {
+        "prefix": "_lpreventDefault",
+        "body": [
+            "${1:\\$event}.preventDefault();"
+        ],
+        "description": "_lpreventDefault"
+    },
+    "_lcl": {
+        "prefix": "_lcl",
+        "body": [
+            "console.log(${1:content});"
+        ],
+        "description": "_lcl"
+    },
+    "_lcd": {
+        "prefix": "_lcd",
+        "body": [
+            "console.debug(${1:content});"
+        ],
+        "description": "_lcd"
+    },
+    "_lci": {
+        "prefix": "_lci",
+        "body": [
+            "console.info(${1:content});"
+        ],
+        "description": "_lci"
+    },
+    "_lcw": {
+        "prefix": "_lcw",
+        "body": [
+            "console.warn(${1:content});"
+        ],
+        "description": "_lcw"
+    },
+    "_lcTs": {
+        "prefix": "_lcTs",
+        "body": [
+            "console.time('spend time ${1:n}');"
+        ],
+        "description": "_lcTs"
+    },
+    "_lcTe": {
+        "prefix": "_lcTe",
+        "body": [
+            "console.timeEnd('spend time ${1:n}');"
+        ],
+        "description": "_lcTe"
+    },
+    "_lfn": {
+        "prefix": "_lfn",
+        "body": [
+            "/**", "* [${2:functionName} description]", "* @param  [type] ${3:params} [description]", "* @return [type] ${4:body} [description]", "*/", "function ${2:functionName}(${3:params}){", "${4:body}", "};"
+        ],
+        "description": "_lfn"
+    },
+    "_lfnn": {
+        "prefix": "_lfnn",
+        "body": [
+            "/**", "* [${2:functionName} description]", "* @param  [type] ${3:params} [description]", "* @return [type] ${4:body} [description]", "*/", "var ${2:functionName} = function(${3:params}){", "${4:body}", "};"
+        ],
+        "description": "_lfnn"
+    },
+    "_lfnNoComment": {
+        "prefix": "_lfnNoComment",
+        "body": [
+            "function ${2:functionName}(${3:params}){", "${4:body}", "};"
+        ],
+        "description": "_lfnNoComment"
+    },
+    "_lif": {
+        "prefix": "_lif",
+        "body": [
+            "if(${1:condition}){", "", "}"
+        ],
+        "description": "_lif"
+    },
+    "_lelse": {
+        "prefix": "_lelse",
+        "body": [
+            "else{", "", "}"
+        ],
+        "description": "_lelse"
+    },
+    "_lforWhile": {
+        "prefix": "_lforWhile",
+        "body": [
+            "var length = ${1:list}.length;", "while (length > 0) {", "length--;", "${2:todo}", "}"
+        ],
+        "description": "_lforWhile"
+    },
+    "_lfori": {
+        "prefix": "_lfori",
+        "body": [
+            "for(var i = 0 ; i < ${1:list}.length ; i++){", "${2:todo}", "}"
+        ],
+        "description": "_lfori"
+    },
+    "_lfori-": {
+        "prefix": "_lfori-",
+        "body": [
+            "for(var i = ${1:list}.length-1 ; i >= 0 ; i--){", "${2:todo}", "}"
+        ],
+        "description": "_lfori-"
+    },
+    "_lforj": {
+        "prefix": "_lforj",
+        "body": [
+            "for(var j = ${1:list}.length-1 ; j >= 0 ; j--){", "${2:todo}", "}"
+        ],
+        "description": "_lforj"
+    },
+    "_lfork": {
+        "prefix": "_lfork",
+        "body": [
+            "for(var k = ${1:list}.length-1 ; k >= 0 ; k--){", "${2:todo}", "}"
+        ],
+        "description": "_lfork"
+    },
+    "_lforEach": {
+        "prefix": "_lforEach",
+        "body": [
+            "${1:list}.forEach((item, index) => {", "body", "});"
+        ],
+        "description": "_lforEach"
+    },
+    "_lunique": {
+        "prefix": "_lunique",
+        "body": [
+            "var unilist = [];", "var n = {};", "${1:list}.forEach(function(item) {", "if (!n[item.valueCompare]) {", "n[item.valueCompare] = true;", "unilist.push(item);", "}", "})"
+        ],
+        "description": "_lunique"
+    },
+    "_lfor": {
+        "prefix": "_lfor",
+        "body": [
+            "for(var item in ${1:list}){", "${2:content}", "};"
+        ],
+        "description": "_lfor"
+    },
+    "_lswitch": {
+        "prefix": "_lswitch",
+        "body": [
+            "switch (${1:condition}) {", "case ${2:case1}:{ ${3:content}", "break;}", "default:{ ${4:content}", "break;}", "}"
+        ],
+        "description": "_lswitch"
+    },
+    "_lsplice": {
+        "prefix": "_lsplice",
+        "body": [
+            "${1:list}.splice(${2:index},${3:'0 insert, 1 remove'});"
+        ],
+        "description": "_lsplice"
+    },
+    "_lscriptStringbuilder": {
+        "prefix": "_lscriptStringbuilder",
+        "body": [
+            "function StringBuilder(value) {", "this.strings = new Array('');", "this.append(value);", "}", "StringBuilder.prototype.append = function(value) {", "if (value) {", "this.strings.push(value);", "}", "}", "StringBuilder.prototype.clear = function() {", "this.strings.length = 1;", "}", "StringBuilder.prototype.toString = function() {", "return this.strings.join('');", "}", "", "// var sb = new StringBuilder();", "// sb.append('Lorem ipsum dolor sit amet, consectetuer adipiscing elit, ');", "// sb.append('sed diem nonummy nibh euismod tincidunt ut lacreet dolore ');", "// sb.append('magna aliguam erat volutpat.');", "// var s = sb.toString();"
+        ],
+        "description": "_lscriptStringbuilder"
+    },
+    "_lscriptSb": {
+        "prefix": "_lscriptSb",
+        "body": [
+            "var ${1:var} = new StringBuilder();"
+        ],
+        "description": "_lscriptSb"
+    },
+    "_lscript": {
+        "prefix": "_lscript",
+        "body": [
+            "<script src='' type='text/javascript' charset='utf-8' ></script>"
+        ],
+        "description": "_lscript"
+    },
+    "_llink": {
+        "prefix": "_llink",
+        "body": [
+            "<link rel='stylesheet' href=''>"
+        ],
+        "description": "_llink"
+    },
+    "_lbackClick": {
+        "prefix": "_lbackClick",
+        "body": [
+            "if (window.history && window.history.pushState) {", "window.history.pushState('forward', null, './#forward');", "\\$(window).on('popstate', function() {", "alert('Back button was pressed.');", "});", "}"
+        ],
+        "description": "_lbackClick"
+    },
+    "_lbackWindow": {
+        "prefix": "_lbackWindow",
+        "body": [
+            "window.history.back();"
+        ],
+        "description": "_lbackWindow"
+    },
+    "_lclosetab": {
+        "prefix": "_lclosetab",
+        "body": [
+            "window.onbeforeunload = function(e) {", "var e = e || window.event;", "var msg = 'Do you really want to leave this page?'", "if (e) {", "e.returnValue = msg;", "}", "return msg;", "};"
+        ],
+        "description": "_lclosetab"
+    },
+    "_lconfirm": {
+        "prefix": "_lconfirm",
+        "body": [
+            "var conform = confirm('${1:yourMessage}');", "if (conform) {", "", "}"
+        ],
+        "description": "_lconfirm"
+    },
+    "_lmap": {
+        "prefix": "_lmap",
+        "body": [
+            "${1:newList} = ${2:oldList}.map(function(item, index) {", "return ${3:content};", "});"
+        ],
+        "description": "_lmap"
+    },
+    "_levery": {
+        "prefix": "_levery",
+        "body": [
+            "var isValid = ${1:list}.every(function(item) {", "return (condition);", "}); // isValid is true"
+        ],
+        "description": "_levery"
+    },
+    "_lsome": {
+        "prefix": "_lsome",
+        "body": [
+            "var isValid = ${1:list}.some(function(item) {", "return (condition);", "}); // isValid is true"
+        ],
+        "description": "_lsome"
+    },
+    "_lfilter": {
+        "prefix": "_lfilter",
+        "body": [
+            "var ${1:newList} = ${2:list}.filter(function(item, index, array) {", "return (condition);", "});", "if (${1:newList} != null && ${1:newList}.length > 0) {", "${3:content}", "}"
+        ],
+        "description": "_lfilter"
+    },
+    "_lreduce": {
+        "prefix": "_lreduce",
+        "body": [
+            "${1:sum} = ${2:list}.reduce(function(previous, current) {", "return previous + current;", "}); // return sum"
+        ],
+        "description": "_lreduce"
+    },
+    "_lsort": {
+        "prefix": "_lsort",
+        "body": [
+            "${1:list}.sort(function(${2:item1}, ${3:item2}) {", "return ${2:item1} > ${3:item2};", "});"
+        ],
+        "description": "_lsort"
+    },
+    "_lconcat": {
+        "prefix": "_lconcat",
+        "body": [
+            "var newArr = arr1.concat(arr2, arr3);"
+        ],
+        "description": "_lconcat"
+    },
+    "_ltimeout": {
+        "prefix": "_ltimeout",
+        "body": [
+            "const tout = setTimeout(() => {", "${1:content}", "clearTimeout(tout);}, 100);"
+        ],
+        "description": "_ltimeout"
+    },
+    "_lsetInterval": {
+        "prefix": "_lsetInterval",
+        "body": [
+            "const intl = setInterval(() => {", "${1:content}", "clearInterval(intl);}, 100);"
+        ],
+        "description": "_lsetInterval"
+    },
+    "_lXmlHttpRequest": {
+        "prefix": "_lXmlHttpRequest",
+        "body": [
+            "function doPost(url, params, callback) {", "var xhr = new XMLHttpRequest();", "xhr.open('POST', url, true);", "xhr.setRequestHeader('Content-Type', 'application/json');", "xhr.onreadystatechange = function() {", "if (xhr.readyState === 4 && xhr.status >= 200 && xhr.status <= 300) {", "var result = JSON.parse(xhr.responseText);", "console.log(result);", "if (typeof callback == 'function') {", "callback(result);", "}", "}", "};", "xhr.timeout = 5000;", "xhr.ontimeout = function() {", "console.log('request timed out');", "};", "xhr.send(JSON.stringify(params));", "}"
+        ],
+        "description": "_lXmlHttpRequest"
+    },
+    "_lAddEventListener": {
+        "prefix": "_lAddEventListener",
+        "body": [
+            "${1:element}.addEventListener('${2:event click, keydown...}', function(event) {", "${3:content}", "});"
+        ],
+        "description": "_lAddEventListener"
+    },
+    "_lcallee": {
+        "prefix": "_lcallee",
+        "body": [
+            "var thisFunction = arguments.callee", "if (!thisFunction.uid) thisFunction.uid = 0;", "++thisFunction.uid;", "console.log(thisFunction.uid);", "return thisFunction.uid;"
+        ],
+        "description": "_lcallee"
+    },
+    "_lfnisolate": {
+        "prefix": "_lfnisolate",
+        "body": [
+            "(function() {", "'use strict';", "${1:body}", "})();"
+        ],
+        "description": "_lfnisolate"
+    },
+    "_lsubstr": {
+        "prefix": "_lsubstr",
+        "body": [
+            "string_resource.substr(start, length);"
+        ],
+        "description": "_lsubstr"
+    },
+    "_lmaxArr": {
+        "prefix": "_lmaxArr",
+        "body": [
+            "Math.max.apply(Math, ${1:arr}.map(function(o) {", "return o.${2:attribute};", "}));"
+        ],
+        "description": "_lmaxArr"
+    },
+    "_lcopy": {
+        "prefix": "_lcopy",
+        "body": [
+            "var ${1:newObject} = JSON.parse(JSON.stringify(${2:oldObject}));"
+        ],
+        "description": "_lcopy"
+    },
+    "_langular-js": {
+        "prefix": "_langular-js",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_langular-js"
+    },
+    "_lngModule": {
+        "prefix": "_lngModule",
+        "body": [
+            "var ${1:appName} = angular.module('${1:appName}',[]);"
+        ],
+        "description": "_lngModule"
+    },
+    "_lngnoop": {
+        "prefix": "_lngnoop",
+        "body": [
+            "(fnCallback || angular.noop )(result);"
+        ],
+        "description": "_lngnoop"
+    },
+    "_lngModule2": {
+        "prefix": "_lngModule2",
+        "body": [
+            "angular.module('${1:appName}',[]);"
+        ],
+        "description": "_lngModule2"
+    },
+    "_lngController": {
+        "prefix": "_lngController",
+        "body": [
+            "${1:appName}.controller('${2:controllerName}Ctrl', ['\\$scope', function(\\$scope) {", "content", "}]);"
+        ],
+        "description": "_lngController"
+    },
+    "_lngController2": {
+        "prefix": "_lngController2",
+        "body": [
+            "function ${2:controllerName}(SomeService) {", "this.doSomething = function() {", "", "};", "this.doSomething = SomeService.doSomething;", "};", "${2:controllerName}.\\$inject = [];", "angular.module('${1:moduleName}').controller('${2:controllerName}', ${2:controllerName});"
+        ],
+        "description": "_lngController2"
+    },
+    "_lngFactory": {
+        "prefix": "_lngFactory",
+        "body": [
+            "${1:appName}.factory('${2:factoryName}', ['', function() {", "var model = {};", "", "return model;", "}]);"
+        ],
+        "description": "_lngFactory"
+    },
+    "_lngFactory2": {
+        "prefix": "_lngFactory2",
+        "body": [
+            "function ${2:factoryName}() {", "", "var model = {};", "", "model.someMethod = function() {", "", "};", "", "return model;", "};", "${2:factoryName}.$inject = [];", "angular.module('${1:moduleName}').factory('${2:factoryName}', ${2:factoryName});"
+        ],
+        "description": "_lngFactory2"
+    },
+    "_lngService": {
+        "prefix": "_lngService",
+        "body": [
+            "${1:appName}.service('${2:serviceName}', ['', function() {", "", "}]);"
+        ],
+        "description": "_lngService"
+    },
+    "_lngService2": {
+        "prefix": "_lngService2",
+        "body": [
+            "function ${2:serviceName}() {", "this.someMethod = function() {", "", "};", "};", "${2:serviceName}.\\$inject = [];", "angular.module('${1:moduleName}').service('${2:serviceName}', ${2:serviceName});"
+        ],
+        "description": "_lngService2"
+    },
+    "_lngComponent": {
+        "prefix": "_lngComponent",
+        "body": [
+            "angular.module('${1:moduleName}', []).component('${2:componentName}', {", "templateUrl: 'source/app/components/${2:componentName}/${2:componentName}.html',", "bindings: {", "\\$router: '<'", "},", "\\$routeConfig: [{", "path: '/projectList',", "name: 'ProjectList',", "// component: 'projectList',", "loader:  function() {", "// lazy load the user module", "return window.\\$ocLazyLoad.load(['path']).then(function() {", "// return the user component name", "return 'componentName';", "});", "},", "useAsDefault: true", "}],", "controller: ${2:componentName}Component,", "controllerAs: '${2:componentName}',", "transclude:'true or false',", "Required:'string'", "});", "${2:componentName}Component.\\$inject = ['\\$router', '\\$ocLazyLoad', '\\$injector'];", "/**", "* [mainComponent description]", "* @param  [type]  [description]", "* @return [type]  [description]", "*/", "function ${2:componentName}Component(\\$router, \\$ocLazyLoad, \\$injector) {", "var vm = this;", "vm.m = {};", "\\$router.config([{", "path: '/login',", "name: 'Login',", "loader: function() {", "// lazy load the user module", "return \\$ocLazyLoad.load(['path']).then(function() {", "// return the user component name", "return 'login';", "});", "},", "useAsDefault: true", "}]);", "/**", "* [getSv description]", "* @param  [type] serviceName [description]", "* @return [type]  [description]", "*/", "vm.getSv = function(serviceName) {", "return \\$injector.get(serviceName);", "};", "/**", "* [$onInit description]", "* @param  [type]  [description]", "* @return [type]  [description]", "*/", "vm.\\$routerOnActivate = function(next, previous){", "", "};", "/**", "* [$onInit description]", "* @param  [type]  [description]", "* @return [type]  [description]", "*/", "vm.\\$routerOnDeactivate = function(next, previous){", "", "};", "/**", "* [$onInit description]", "* @param  [type]  [description]", "* @return [type]  [description]", "*/", "vm.\\$routerCanDeactivate = function(next, previous){", "// If any of the $routerCan... methods return false or a promise that resolves to false, the navigation will be cancelled.", "};", "/**", "* [$onInit description]", "* @param  [type]  [description]", "* @return [type]  [description]", "*/", "vm.\\$routerCanActivate = function(next, previous){", "// If any of the $routerCan... methods return false or a promise that resolves to false, the navigation will be cancelled.", "};", "/**", "* [$onInit description]", "* @param  [type]  [description]", "* @return [type]  [description]", "*/", "vm.\\$onInit = function(){", "", "};", "};"
+        ],
+        "description": "_lngComponent"
+    },
+    "_lngRoute": {
+        "prefix": "_lngRoute",
+        "body": [
+            ".config(function(\\$routeProvider){", "\\$routeProvider.when(${1:URL}, {templateUrl: ${2:templateUrl}, controller: ${3:controller}}).otherwise({redirectTo: ${4:URL}});", "})"
+        ],
+        "description": "_lngRoute"
+    },
+    "_lngRouteLink": {
+        "prefix": "_lngRouteLink",
+        "body": [
+            "<a ng-link='[]'>Heroes</a><ng-outlet></ng-outlet>"
+        ],
+        "description": "_lngRouteLink"
+    },
+    "_lngRouteGo": {
+        "prefix": "_lngRouteGo",
+        "body": [
+            "var link = ['pathName', {", "id: 1", "}];", "this.\\$router.navigate(link);"
+        ],
+        "description": "_lngRouteGo"
+    },
+    "_lngDirective": {
+        "prefix": "_lngDirective",
+        "body": [
+            "${1: mymodule}.directive('${2:directiveName}',['' ,function() {", "return {", "restrict: 'string',", "priority: number,", "template: string,", "templateUrl: string,", "replace: bool,", "transclude: bool,", "scope: bool (true is inherit from parent) or object ({} use a new isolate),", "require: string,", "controller: function(\\$scope, \\$element, \\$attrs, \\$transclude) {},", "link: function(scope, iElement, iAttrs) {},", "compile: function(tElement, tAttrs, transclude) {", "return {", "pre: function(scope, iElement, iAttrs, controller) {},", "post: function(scope, iElement, iAttrs, controller) {}", "}", "}", "};", "}]);"
+        ],
+        "description": "_lngDirective"
+    },
+    "_lngTimeout": {
+        "prefix": "_lngTimeout",
+        "body": [
+            "var ngtout = \\$timeout(function(){", "${1:content}", "\\$timeout.cancel(ngtout);},100);"
+        ],
+        "description": "_lngTimeout"
+    },
+    "_lngfn": {
+        "prefix": "_lngfn",
+        "body": [
+            "/**", "* [${2:functionName} description]", "* @param  [type] ${3:params} [description]", "* @return [type] ${4:body} [description]", "*/", "${1:\\$scope}.${2:functionName} = function(${3:params}){", "${4:body}", "};"
+        ],
+        "description": "_lngfn"
+    },
+    "_lngfnn": {
+        "prefix": "_lngfnn",
+        "body": [
+            "function(${2:params}){", "${3:body}", "};"
+        ],
+        "description": "_lngfnn"
+    },
+    "_lscope": {
+        "prefix": "_lscope",
+        "body": [
+            "\\$scope.${1:name}"
+        ],
+        "description": "_lscope"
+    },
+    "_lngdoPost": {
+        "prefix": "_lngdoPost",
+        "body": [
+            "commonService.doPost('${1:url}', params, {", "success: function(result) {", "${2:body}", "(fnCallback || angular.noop)(result);", "}", "});"
+        ],
+        "description": "_lngdoPost"
+    },
+    "_lngdoPost2": {
+        "prefix": "_lngdoPost2",
+        "body": [
+            "var param = {", "", "};", "commonService.doPost('${1:url}', param, {", "success: function(res) {", "", "}", "});"
+        ],
+        "description": "_lngdoPost2"
+    },
+    "_lngfilter": {
+        "prefix": "_lngfilter",
+        "body": [
+            "var ${1:objectFilter} = \\$filter('filter')(${2:listFilter}, {", "'${3:cdFilter}' : ${4:valueFilter}", "});", "if (angular.isDefined(${1:objectFilter}) && ${1:objectFilter} != null && ${1:objectFilter}.length > 0){", "${5:todo}", "}"
+        ],
+        "description": "_lngfilter"
+    },
+    "_lngOrderBy": {
+        "prefix": "_lngOrderBy",
+        "body": [
+            "var orderBy = \\$filter('orderBy');", "${1:list} = orderBy(${1:list}, ${2:columnName}, ${3:true||false});"
+        ],
+        "description": "_lngOrderBy"
+    },
+    "_lngwatch": {
+        "prefix": "_lngwatch",
+        "body": [
+            "\\$scope.\\$watch('${1:modelWatch}', function(newValue, oldValue) {", "if (angular.isDefined(oldValue) && oldValue != null && oldValue != '' && angular.isDefined(newValue) && newValue != null && newValue != '' && newValue != oldValue ) {", "", "}", "});"
+        ],
+        "description": "_lngwatch"
+    },
+    "_lngapply": {
+        "prefix": "_lngapply",
+        "body": [
+            "\\$scope.\\$apply(function() {", "", "});"
+        ],
+        "description": "_lngapply"
+    },
+    "_lngdigest": {
+        "prefix": "_lngdigest",
+        "body": [
+            "\\$scope.\\$digest(function() {", "", "});"
+        ],
+        "description": "_lngdigest"
+    },
+    "_lngwatchcollection": {
+        "prefix": "_lngwatchcollection",
+        "body": [
+            "\\$scope.\\$watchCollection('${1:modelWatch}', function(newValue) {", "${2:todo}", "});"
+        ],
+        "description": "_lngwatchcollection"
+    },
+    "_lngbroadFn": {
+        "prefix": "_lngbroadFn",
+        "body": [
+            "\\$rootScope.\\$broadcast(${1:broadcastName}, function(params) {", "${2:body}", "});"
+        ],
+        "description": "_lngbroadFn"
+    },
+    "_lngbroadParams": {
+        "prefix": "_lngbroadParams",
+        "body": [
+            "\\$rootScope.\\$broadcast(${1:broadcastName}, params);"
+        ],
+        "description": "_lngbroadParams"
+    },
+    "_lngbroadParamsFn": {
+        "prefix": "_lngbroadParamsFn",
+        "body": [
+            "\\$rootScope.\\$broadcast(${1:broadcastName}, params, function(params) {", "${2:body}", "});"
+        ],
+        "description": "_lngbroadParamsFn"
+    },
+    "_lngemitFn": {
+        "prefix": "_lngemitFn",
+        "body": [
+            "\\$scope.\\$emit(${1:emitName}, function(params) {", "body", "});"
+        ],
+        "description": "_lngemitFn"
+    },
+    "_lngemitParams": {
+        "prefix": "_lngemitParams",
+        "body": [
+            "\\$scope.\\$emit(${1:emitName}, params);"
+        ],
+        "description": "_lngemitParams"
+    },
+    "_lngscopeOnFn": {
+        "prefix": "_lngscopeOnFn",
+        "body": [
+            "\\$scope.\\$on(${1:onName}, function(evt, params) {", "${2:body}", "});"
+        ],
+        "description": "_lngscopeOnFn"
+    },
+    "_lngscopeOnCallback": {
+        "prefix": "_lngscopeOnCallback",
+        "body": [
+            "\\$scope.\\$on(${1:onName}, function(evt, callback) {", "${2:callbackFn}", "});"
+        ],
+        "description": "_lngscopeOnCallback"
+    },
+    "_lngscopeOnFnCallback": {
+        "prefix": "_lngscopeOnFnCallback",
+        "body": [
+            "\\$scope.\\$on(${1:onName}, function(evt, params, callback) {", "${2:body}", "});"
+        ],
+        "description": "_lngscopeOnFnCallback"
+    },
+    "_lngfactoryStringbuilder": {
+        "prefix": "_lngfactoryStringbuilder",
+        "body": [
+            "${1:module}.factory('StringBuilder', function() {", "var strings = new Array();", "var StringBuilder = {", "append: function(value) {", "if (value) {", "strings.push(value);", "}", "},", "toString: function() {", "if (strings.length >= 0) {", "var s = strings.join('');", "return s;", "}", "},", "clear: function() {", "strings.length = 0;", "return strings;", "}", "};", "return StringBuilder;", "});", ""
+        ],
+        "description": "_lngfactoryStringbuilder"
+    },
+    "_lngmodelStringbuilder": {
+        "prefix": "_lngmodelStringbuilder",
+        "body": [
+            "var strings = new Array();", "model.StringBuilder = {", "append: function(value) {", "if (value) {", "strings.push(value);", "}", "},", "toString: function() {", "if (strings.length >= 0) {", "var s = strings.join('');", "return s;", "}", "},", "clear: function() {", "strings.length = 0;", "return strings;", "}", "};"
+        ],
+        "description": "_lngmodelStringbuilder"
+    },
+    "_lngVarSb": {
+        "prefix": "_lngVarSb",
+        "body": [
+            "var ${1:var} = \\$scope.model.StringBuilder;"
+        ],
+        "description": "_lngVarSb"
+    },
+    "_lngForEach": {
+        "prefix": "_lngForEach",
+        "body": [
+            "angular.forEach(${1:list}, function(item) {", "body", "})"
+        ],
+        "description": "_lngForEach"
+    },
+    "_lngSort": {
+        "prefix": "_lngSort",
+        "body": [
+            "var orderBy = $filter('orderBy');", "${1:list} = orderBy(${1:list}, '${2:sortField}', false);"
+        ],
+        "description": "_lngSort"
+    },
+    "_lngHttpGet": {
+        "prefix": "_lngHttpGet",
+        "body": [
+            "\\$http.get(${1:url}).success(function(data, status, headers, config) {", "", "}).error(function(data, status, headers, config) {", "", "});"
+        ],
+        "description": "_lngHttpGet"
+    },
+    "_lngHttpPost": {
+        "prefix": "_lngHttpPost",
+        "body": [
+            "\\$http.post(${1:url}, params).success(function(data, status, headers, config) {", "", "}).error(function(data, status, headers, config) {", "", "});"
+        ],
+        "description": "_lngHttpPost"
+    },
+    "_lngbind": {
+        "prefix": "_lngbind",
+        "body": [
+            "element.bind( 'mouseenter mouseleave', function() {", "content", "});"
+        ],
+        "description": "_lngbind"
+    },
+    "_lngbind1": {
+        "prefix": "_lngbind1",
+        "body": [
+            "element.bind({", "click: function() {", "content", "},", "mouseenter: function() {", "content", "}", "});"
+        ],
+        "description": "_lngbind1"
+    },
+    "_lngunbind": {
+        "prefix": "_lngunbind",
+        "body": [
+            "element.unbind( 'click' );"
+        ],
+        "description": "_lngunbind"
+    },
+    "_lngon": {
+        "prefix": "_lngon",
+        "body": [
+            "element.on('click', function() {", "alert(\\$(this).text());", "});"
+        ],
+        "description": "_lngon"
+    },
+    "_lngdebug": {
+        "prefix": "_lngdebug",
+        "body": [
+            "log.debug(${1:content});"
+        ],
+        "description": "_lngdebug"
+    },
+    "_lnginfo": {
+        "prefix": "_lnginfo",
+        "body": [
+            "log.info(${1:content});"
+        ],
+        "description": "_lnginfo"
+    },
+    "_lngwarn": {
+        "prefix": "_lngwarn",
+        "body": [
+            "log.warn(${1:content});"
+        ],
+        "description": "_lngwarn"
+    },
+    "_lngerror": {
+        "prefix": "_lngerror",
+        "body": [
+            "log.error(${1:content});"
+        ],
+        "description": "_lngerror"
+    },
+    "_lngstopevent": {
+        "prefix": "_lngstopevent",
+        "body": [
+            "event.stopPropagation();"
+        ],
+        "description": "_lngstopevent"
+    },
+    "_lnginjector": {
+        "prefix": "_lnginjector",
+        "body": [
+            "var ${1:\\$http}=\\$injector.get('${1:\\$http}');"
+        ],
+        "description": "_lnginjector"
+    },
+    "_lngcssngcloak": {
+        "prefix": "_lngcssngcloak",
+        "body": [
+            "[ng\\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {", "display: none !important;", "}"
+        ],
+        "description": "_lngcssngcloak"
+    },
+    "_lngparse": {
+        "prefix": "_lngparse",
+        "body": [
+            "\\$parse('${1:expression}')(\\$scope)"
+        ],
+        "description": "_lngparse"
+    },
+    "_lngthen": {
+        "prefix": "_lngthen",
+        "body": [
+            "then(function(result) {", "", "}, function(err) {", "", "});"
+        ],
+        "description": "_lngthen"
+    },
+    "_lngfilterDate": {
+        "prefix": "_lngfilterDate",
+        "body": [
+            "var day =  \\$filter('date')(new Date(), '${1:yyyy-MM-dd}');"
+        ],
+        "description": "_lngfilterDate"
+    },
+    "_lngRouteUi": {
+        "prefix": "_lngRouteUi",
+        "body": [
+            "appModule.config(['\\$stateProvider', '\\$urlRouterProvider', '\\$locationProvider', function(\\$stateProvider, \\$urlRouterProvider, \\$locationProvider) {", "\\$stateProvider.state('${6:state}', {", "url: '${1:url}',", "templateUrl: '${2:templateUrl}',", "controller: '${3:controller}',", "title: '${4:title}'", "});", "\\$urlRouterProvider.otherwise('${5:url}');", "\\$locationProvider.html5Mode(true);", "}]);"
+        ],
+        "description": "_lngRouteUi"
+    },
+    "_lngRouteUiChild": {
+        "prefix": "_lngRouteUiChild",
+        "body": [
+            "\\$stateProvider.state('${6:state}', {", "url: '${1:url}',", "views: {", "'${2:viewChild}': {", "templateUrl: '${3:templateUrl}'", "}", "},", "controller: '${4:controller}',", "title: '${5:title}'", "});"
+        ],
+        "description": "_lngRouteUiChild"
+    },
+    "_lngselect": {
+        "prefix": "_lngselect",
+        "body": [
+            "<select name='mySelect' id='mySelect'      ng-options='option.name for option in data.availableOptions track by option.id'      ng-model='data.selectedOption'></select>"
+        ],
+        "description": "_lngselect"
+    },
+    "_lexex": {
+        "prefix": "_lexex",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lexex"
+    },
+    "_lexdopost": {
+        "prefix": "_lexdopost",
+        "body": [
+            "commonService.doPost(", "action: ${1:action},", "params: param,", "callback: {", "success:function(result) {", "", "}", "}", ");"
+        ],
+        "description": "_lexdopost"
+    },
+    "_lexpress-js": {
+        "prefix": "_lexpress-js",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lexpress-js"
+    },
+    "_lefne": {
+        "prefix": "_lefne",
+        "body": [
+            "function(req, res, next){", "${3:body}", "}"
+        ],
+        "description": "_lefne"
+    },
+    "_lefnen": {
+        "prefix": "_lefnen",
+        "body": [
+            "function(${1:params}){", "${3:body}", "}"
+        ],
+        "description": "_lefnen"
+    },
+    "_leappget": {
+        "prefix": "_leappget",
+        "body": [
+            "${1:router}.get('${2:url}',function(req, res, next){", "${3:body}", "});"
+        ],
+        "description": "_leappget"
+    },
+    "_leapppost": {
+        "prefix": "_leapppost",
+        "body": [
+            "${1:router}.post('${2:url}',function(req, res, next){", "${3:body}", "});"
+        ],
+        "description": "_leapppost"
+    },
+    "_lemodelCreateMongoDb": {
+        "prefix": "_lemodelCreateMongoDb",
+        "body": [
+            "var mongoose = require('mongoose'),", "Schema = mongoose.Schema;", "var ${1:model}Schema = new Schema({", "${2:property}:{type:${3:String},required:${4:true}},", "${5:property2}:{type:${6:String},required:${7:true}}", "});", "${1:model}Schema.index({${2:property}:1},{unique:true});", "${1:model}Schema.virtual('Created').get(function(){return this._id.getTimestamp();});", "mongoose.model('${8:modelUpper}',${1:model}Schema);"
+        ],
+        "description": "_lemodelCreateMongoDb"
+    },
+    "_lecontrollerRequire": {
+        "prefix": "_lecontrollerRequire",
+        "body": [
+            "var express = require('express'),", "router = express.Router(),", "mongoose = require('mongoose'),", "${1:modelName} = mongoose.model('${2:modelUpper}');", "", "module.exports = function (app) {", "app.use('/', router);", "};", "var ${3:controllerName} = './${3:controllerName}/';"
+        ],
+        "description": "_lecontrollerRequire"
+    },
+    "_lesend": {
+        "prefix": "_lesend",
+        "body": [
+            "res.send(${1:content});"
+        ],
+        "description": "_lesend"
+    },
+    "_lerequire": {
+        "prefix": "_lerequire",
+        "body": [
+            "require(${1:path});"
+        ],
+        "description": "_lerequire"
+    },
+    "_lesession": {
+        "prefix": "_lesession",
+        "body": [
+            "session"
+        ],
+        "description": "_lesession"
+    },
+    "_lother": {
+        "prefix": "_lother",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lother"
+    },
+    "_lgetPatient": {
+        "prefix": "_lgetPatient",
+        "body": [
+            "\\$rootScope.\\$broadcast('COM1100#getPatient', function(patientInfo) {", "${1:body}", "});"
+        ],
+        "description": "_lgetPatient"
+    },
+    "_lgetInfo": {
+        "prefix": "_lgetInfo",
+        "body": [
+            "\\$rootScope.\\$broadcast('COM1000#getInfo',function(headerInfo)  {", "${1:body}", "});"
+        ],
+        "description": "_lgetInfo"
+    },
+    "_ltryjava": {
+        "prefix": "_ltryjava",
+        "body": [
+            "try{", "${1:content}", "}catch(BusinessException ex){", "modelOutput = new ${2:model}();", "modelOutput.setErrorMessage(ex.getMessage());", "}"
+        ],
+        "description": "_ltryjava"
+    },
+    "_lejs": {
+        "prefix": "_lejs",
+        "body": [
+            "<% ${1:content} %>"
+        ],
+        "description": "_lejs"
+    },
+    "_ljquery": {
+        "prefix": "_ljquery",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_ljquery"
+    },
+    "_ljajax": {
+        "prefix": "_ljajax",
+        "body": [
+            "\\$.ajax({", "url: 'script.php',", "type: 'POST',", "data: {", "id: menuId", "},", "dataType: 'html',", "beforeSend: function(xhr) {", "xhr.overrideMimeType('text/plain; charset=x-user-defined');", "}", "}).done(function(data) {", "if (console && console.log) {", "console.log('Sample of data:', data.slice(0, 100));", "}", "});"
+        ],
+        "description": "_ljajax"
+    },
+    "_ljbind": {
+        "prefix": "_ljbind",
+        "body": [
+            "\\$( '#foo' ).bind( 'mouseenter mouseleave', function() {", "content", "});"
+        ],
+        "description": "_ljbind"
+    },
+    "_ljbind1": {
+        "prefix": "_ljbind1",
+        "body": [
+            "\\$('#foo').bind({", "click: function() {", "content", "},", "mouseenter: function() {", "content", "}", "});"
+        ],
+        "description": "_ljbind1"
+    },
+    "_ljunbind": {
+        "prefix": "_ljunbind",
+        "body": [
+            "\\$( '#foo' ).unbind( 'click' );"
+        ],
+        "description": "_ljunbind"
+    },
+    "_ljon": {
+        "prefix": "_ljon",
+        "body": [
+            "\\$('p').on('click', function() {", "alert(\\$(this).text());", "});"
+        ],
+        "description": "_ljon"
+    },
+    "_ljresize": {
+        "prefix": "_ljresize",
+        "body": [
+            "\\$(window).resize(function(event) {", "content", "});"
+        ],
+        "description": "_ljresize"
+    },
+    "_ljscroll": {
+        "prefix": "_ljscroll",
+        "body": [
+            "\\$( '#target' ).scroll(function(event) {", "content", "});"
+        ],
+        "description": "_ljscroll"
+    },
+    "_ljdocumentReady": {
+        "prefix": "_ljdocumentReady",
+        "body": [
+            "\\$( document ).ready(function() {", "content", "});"
+        ],
+        "description": "_ljdocumentReady"
+    },
+    "_ljload": {
+        "prefix": "_ljload",
+        "body": [
+            "\\$( 'img.userIcon' ).load(function() {", "if ( \\$( this ).height() > 100) {", "\\$( this ).addClass( 'bigImg' );", "}", "});"
+        ],
+        "description": "_ljload"
+    },
+    "_ljKeyDown": {
+        "prefix": "_ljKeyDown",
+        "body": [
+            "\\$( '#target' ).keydown(function() {", "alert( 'Handler for .keydown() called.' );", "});"
+        ],
+        "description": "_ljKeyDown"
+    },
+    "_ljMap": {
+        "prefix": "_ljMap",
+        "body": [
+            "var newList = \\$.map(arr, function(item) {", "return content;", "});"
+        ],
+        "description": "_ljMap"
+    },
+    "_ljeach": {
+        "prefix": "_ljeach",
+        "body": [
+            "\\$.each(${1:list}, function(index, item) {", "${2:body}", "})"
+        ],
+        "description": "_ljeach"
+    },
+    "_ljPlugin": {
+        "prefix": "_ljPlugin",
+        "body": [
+            "/**", "*  @name plugin", "*  @description description", "*  @version 1.0", "*  @options", "*    option", "*  @events", "*    event", "*  @methods", "*    init", "*    publicMethod", "*    destroy", "*/", ";(function(\\$, window, undefined) {", "'use strict';", "", "var pluginName = 'plugin',", "customEvent = 'customEvent';", "var privateVar = null;", "var privateMethod = function(el, options) {", "// to do", "};", "", "function Plugin(element, options) {", "this.element = \\$(element);", "this.options = \\$.extend({}, \\$.fn[pluginName].defaults, this.element.data(), options);", "this.init();", "}", "", "Plugin.prototype = {", "init: function() {", "var that = this;", "this.vars = {", "key: 'value'", "};", "// initialize", "// add events", "},", "publicMethod: function(params) {", "// to do", "\\$.isFunction(this.options.onCallback) && this.options.onCallback();", "this.element.trigger(customEvent);", "},", "destroy: function() {", "// remove events", "// deinitialize", "\\$.removeData(this.element[0], pluginName);", "}", "};", "", "\\$.fn[pluginName] = function(options, params) {", "return this.each(function() {", "var instance = \\$.data(this, pluginName);", "if (!instance) {", "\\$.data(this, pluginName, new Plugin(this, options));", "} else if (instance[options]) {", "instance[options](params);", "}", "});", "};", "", "\\$.fn[pluginName].defaults = {", "key: 'value',", "onCallback: null", "};", "", "\\$(function() {", "\\$('[data-' + pluginName + ']').on(customEvent, function() {", "// to do", "});", "", "\\$('[data-' + pluginName + ']')[pluginName]({", "key: 'custom'", "});", "});", "", "}(jQuery, window));", ""
+        ],
+        "description": "_ljPlugin"
+    },
+    "_ljProject": {
+        "prefix": "_ljProject",
+        "body": [
+            "/**", "* Global variables and functions", "*/", "var ${1:ProjectName} = (function(\\$, window, undefined) {", "var privateVar = 1;", "", "function privateMethod1() {};", "return {", "publicVar: 1,", "publicObj: {", "var1: 1,", "var2: 2", "},", "publicMethod1: privateMethod1", "};", "})(jQuery, window);"
+        ],
+        "description": "_ljProject"
+    },
+    "_lReactjs": {
+        "prefix": "_lReactjs",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lReactjs"
+    },
+    "_lRClass": {
+        "prefix": "_lRClass",
+        "body": [
+            "import React from 'react';","class ${1:ComponentName} extends React.Component{","    constructor(props){","super(props);","    }","    componentWillMount(){","","    }","    componentWillUnmount(){","        ","    }","    componentDidMount(){","","    }","    componentWillReceiveProps(){","","    }","    shouldComponentUpdate(){","","    }","    componentWillUpdate(){","","    }","    componentDidUpdate(){","","    }","    render(){","        return(","            <div>","                ","            </div>","        )","    }","}","export default ${1:ComponentName};"
+        ],
+        "description": "_lRClass"
+    },
+    "_lionic": {
+        "prefix": "_lionic",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lionic"
+    },
+    "_ltest": {
+        "prefix": "_ltest",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_ltest"
+    },
+    "_ltestdescribe": {
+        "prefix": "_ltestdescribe",
+        "body": [
+            "describe('${1:title}', function() {", "${2:body}", "});"
+        ],
+        "description": "_ltestdescribe"
+    },
+    "_ltestit": {
+        "prefix": "_ltestit",
+        "body": [
+            "it('${1:result must be}', function() {", "${2:body}", "});"
+        ],
+        "description": "_ltestit"
+    },
+    "_ltestbeforEarch": {
+        "prefix": "_ltestbeforEarch",
+        "body": [
+            "beforeEach(function() {", "", "});"
+        ],
+        "description": "_ltestbeforEarch"
+    },
+    "_ltestcontroller": {
+        "prefix": "_ltestcontroller",
+        "body": [
+            "describe('${1:controller}', function() {", "var \\$rootScope, \\$scope, controller;", "beforeEach(function() {", "angular.mock.module('alModule');", "angular.mock.inject(function(\\$injector) {", "\\$rootScope = \\$injector.get('\\$rootScope');", "\\$scope = \\$rootScope.\\$new();", "controller = \\$injector.get('\\$controller')('${1:controller}', {", "\\$scope: \\$scope", "});", "});", "});", "});"
+        ],
+        "description": "_ltestcontroller"
+    },
+    "_ltestExpectEqual": {
+        "prefix": "_ltestExpectEqual",
+        "body": [
+            "expect(${1:variable1}).toEqual(${2:variable2});"
+        ],
+        "description": "_ltestExpectEqual"
+    },
+    "_lrequirejs": {
+        "prefix": "_lrequirejs",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lrequirejs"
+    },
+    "_lrjDefine": {
+        "prefix": "_lrjDefine",
+        "body": [
+            "define([]function (){", "${1}", "});"
+        ],
+        "description": "_lrjDefine"
+    },
+    "_lrjconfig": {
+        "prefix": "_lrjconfig",
+        "body": [
+            "require.config({", "paths: {", "'${1:pathName}': '${2:path}'", "},", "shim: {", "'${3:moduleName}': {", "deps: []", "}", "}", "});", "require(['${4:pathName}'], function() {", "angular.bootstrap(document, ['${5:mainModule}']);", "});"
+        ],
+        "description": "_lrjconfig"
+    },
+    "_lrjrequire": {
+        "prefix": "_lrjrequire",
+        "body": [
+            "require(['${4:pathName}'], function() {", "${5}", "});"
+        ],
+        "description": "_lrjrequire"
+    },
+    "_llaravel": {
+        "prefix": "_llaravel",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_llaravel"
+    },
+    "_llrouteget": {
+        "prefix": "_llrouteget",
+        "body": [
+            "Route::get('${1:name}', function () {", "return ${2:view('welcome')};", "});"
+        ],
+        "description": "_llrouteget"
+    },
+    "_llroutepost": {
+        "prefix": "_llroutepost",
+        "body": [
+            "Route::post('${1:name}', function () {", "return ${2:view('welcome')};", "});"
+        ],
+        "description": "_llroutepost"
+    },
+    "_llfn": {
+        "prefix": "_llfn",
+        "body": [
+            "/**", "* [${1:functionName} description]", "* @param  [type] ${2:params} [description]", "* @return [type] ${3:body} [description]", "*/", "public function ${1:functionName}(${2:params}){", "return view(${3:body})", "}"
+        ],
+        "description": "_llfn"
+    },
+    "_llfnpost": {
+        "prefix": "_llfnpost",
+        "body": [
+            "public function ${1:functionName}(Request \\$request){", "\\$data = \\$request->all();", "return view(${3:body})", "}"
+        ],
+        "description": "_llfnpost"
+    },
+    "_llview": {
+        "prefix": "_llview",
+        "body": [
+            "view('${1:view}')->with('${2:name}', ${3:variable})"
+        ],
+        "description": "_llview"
+    },
+    "_llformselec": {
+        "prefix": "_llformselec",
+        "body": [
+            "Form::select('${1:name}', ${2:value}, null, [${3:attribute}]);"
+        ],
+        "description": "_llformselec"
+    },
+    "_llform": {
+        "prefix": "_llform",
+        "body": [
+            "Form::${1:control}('${2:name}', ${3:value}, [${4:attribute}]);"
+        ],
+        "description": "_llform"
+    },
+    "_llquery": {
+        "prefix": "_llquery",
+        "body": [
+            "\\${1:variable} = DB::select('${2:query}');"
+        ],
+        "description": "_llquery"
+    },
+    "_lllog": {
+        "prefix": "_lllog",
+        "body": [
+            "Log::debug(${1:content});"
+        ],
+        "description": "_lllog"
+    },
+    "_lljson": {
+        "prefix": "_lljson",
+        "body": [
+            "return response()->json(${1:result});"
+        ],
+        "description": "_lljson"
+    },
+    "_lgulp": {
+        "prefix": "_lgulp",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lgulp"
+    },
+    "_lgtask": {
+        "prefix": "_lgtask",
+        "body": [
+            "gulp.task('${1:taskName}', ['${2:ortherTask}'], function() {", "${3:body}", "});"
+        ],
+        "description": "_lgtask"
+    },
+    "_lgsrc": {
+        "prefix": "_lgsrc",
+        "body": [
+            "gulp.src('${1:source}');"
+        ],
+        "description": "_lgsrc"
+    },
+    "_lphp": {
+        "prefix": "_lphp",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lphp"
+    },
+    "_lpforeach": {
+        "prefix": "_lpforeach",
+        "body": [
+            "foreach (\\${1:array} as &\\${2:item}) {", "", "};"
+        ],
+        "description": "_lpforeach"
+    },
+    "_lpfori-": {
+        "prefix": "_lpfori-",
+        "body": [
+            "\\$length = count(\\${1:array});", "for(\\$i = \\$length - 1 ; \\$i >= 0 ; \\$i--){", "", "}"
+        ],
+        "description": "_lpfori-"
+    },
+    "_lpdatediff": {
+        "prefix": "_lpdatediff",
+        "body": [
+            "\\$ngay_bat_dau = strtotime('ngay_bat_dau');", "\\$ngay_ket_thuc = strtotime('ngay_ket_thuc');", "\\$datediff = \\$ngay_ket_thuc - \\$ngay_bat_dau;", "echo floor(\\$datediff/(60*60*24));"
+        ],
+        "description": "_lpdatediff"
+    },
+    "_lpIndexof": {
+        "prefix": "_lpIndexof",
+        "body": [
+            "strpos(${1:str_source}, ${2:str_find});"
+        ],
+        "description": "_lpIndexof"
+    },
+    "_lpSubstr": {
+        "prefix": "_lpSubstr",
+        "body": [
+            "substr(${1:str_source}, start, length);"
+        ],
+        "description": "_lpSubstr"
+    },
+    "_lpstrtotime": {
+        "prefix": "_lpstrtotime",
+        "body": [
+            "strtotime('mm/dd/yyyy ; yyyy/mm/dd ; dd-mm-yyyy ; yyyy-mm-dd');"
+        ],
+        "description": "_lpstrtotime"
+    },
+    "_lngg": {
+        "prefix": "_lngg",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lngg"
+    },
+    "_lnggImport": {
+        "prefix": "_lnggImport",
+        "body": [
+            "import {${1:Component}} from '${2:angular2/core}';"
+        ],
+        "description": "_lnggImport"
+    },
+    "_lnggImportRoute": {
+        "prefix": "_lnggImportRoute",
+        "body": [
+            "import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteParams, Router, RouterOutlet } from 'angular2/router';", "@RouteConfig([", "{path: '/${1:path}', name: '${2:name}', component: ${3:name}Component${4:, useAsDefault: true}}", "])"
+        ],
+        "description": "_lnggImportRoute"
+    },
+    "_lnggRoutePath": {
+        "prefix": "_lnggRoutePath",
+        "body": [
+            "{path: '/${1:path}', name: '${2:name}', component: ${3:name}Component}"
+        ],
+        "description": "_lnggRoutePath"
+    },
+    "_lnggRouteGo": {
+        "prefix": "_lnggRouteGo",
+        "body": [
+            "/*constructor(", "private router: Router) {", "}*/", "let link = ['${1:pathName}', {", "id: 1", "}];", "this.router.navigate(link);"
+        ],
+        "description": "_lnggRouteGo"
+    },
+    "_lnggExport": {
+        "prefix": "_lnggExport",
+        "body": [
+            "export class ${1:name}Component {", "", "}"
+        ],
+        "description": "_lnggExport"
+    },
+    "_lnggExportImplement": {
+        "prefix": "_lnggExportImplement",
+        "body": [
+            "export class ${1:name}Component implements ${2:OnInit} {", "constructor(private _router: Router, private _heroService: HeroService) {}", "ngOnInit() {", "//TODO", "}", "}"
+        ],
+        "description": "_lnggExportImplement"
+    },
+    "_lnggComponent": {
+        "prefix": "_lnggComponent",
+        "body": [
+            "@Component({selector: '${1:selector}',", "viewProviders: [MyService, provide(...)],//Array of dependency injection providers scoped to this component's view.", "template: 'Hello {{name}}',//Inline template / external template URL of the component's view.", "templateUrl: 'my-component.html',", "styles: ['.primary {color: red}'],//List of inline CSS styles / external stylesheet URLs for styling component’s view.", "styleUrls: ['my-component.css'],", "directives: [MyDirective, MyComponent],//List of directives used in the the component’s template.", "pipes: [MyPipe, OtherPipe],//List of pipes used in the component's template.", "})"
+        ],
+        "description": "_lnggComponent"
+    },
+    "_lnggInterface": {
+        "prefix": "_lnggInterface",
+        "body": [
+            "interface ${1:interfaceName} {", "${2:columnName}: ${3:dataType};", "}"
+        ],
+        "description": "_lnggInterface"
+    },
+    "_lnggInjectable": {
+        "prefix": "_lnggInjectable",
+        "body": [
+            "@Injectable()"
+        ],
+        "description": "_lnggInjectable"
+    },
+    "_lnggBootstrap": {
+        "prefix": "_lnggBootstrap",
+        "body": [
+            "import {bootstrap} from 'angular2/platform/browser';", "import {ROUTER_PROVIDERS} from 'angular2/router';", "import {HeroService} from './hero.service';", "import {AppComponent} from './app.component';", "", "bootstrap(AppComponent, [", "ROUTER_PROVIDERS,", "HeroService", "]);"
+        ],
+        "description": "_lnggBootstrap"
+    },
+    "_lnggConstructor": {
+        "prefix": "_lnggConstructor",
+        "body": [
+            "constructor(private _router: Router) { }"
+        ],
+        "description": "_lnggConstructor"
+    },
+    "_lnggSystemConfig": {
+        "prefix": "_lnggSystemConfig",
+        "body": [
+            "System.config({", "transpiler: 'typescript',", "typescriptOptions: {", "emitDecoratorMetadata: true", "},", "packages: {", "'app': {", "defaultExtension: 'ts'", "}", "}", "});", "System.import('app/main').then(null, console.error.bind(console));"
+        ],
+        "description": "_lnggSystemConfig"
+    },
+    "_lnggService": {
+        "prefix": "_lnggService",
+        "body": [
+            "import {", "Injectable", "}", "from 'angular2/core';", "@Injectable()", "export class ${1:name}Service {}"
+        ],
+        "description": "_lnggService"
+    },
+    "_lnggRouterLink": {
+        "prefix": "_lnggRouterLink",
+        "body": [
+            "<a [routerLink]='[]'>${1:name}</a>${2:<router-outlet></router-outlet>}"
+        ],
+        "description": "_lnggRouterLink"
+    },
+    "_lnggStateGo": {
+        "prefix": "_lnggStateGo",
+        "body": [
+            "let link = ['${1:stateName}', {", "id: id", "}];", "this._router.navigate(link);"
+        ],
+        "description": "_lnggStateGo"
+    },
+    "_lnggfn": {
+        "prefix": "_lnggfn",
+        "body": [
+            "/**", "* [${1:functionName} description]", "* @param  [type] ${2:params} [description]", "* @return [type] ${3:body} [description]", "*/", "private ${1:functionName}(${2:params}) {", "${3:body}", "};"
+        ],
+        "description": "_lnggfn"
+    },
+    "_lbb": {
+        "prefix": "_lbb",
+        "body": [
+            "======================================================================================================="
+        ],
+        "description": "_lbb"
+    },
+    "_lbModel": {
+        "prefix": "_lbModel",
+        "body": [
+            "${1:BackboneModel} = Backbone.Model.extend({", "urlRoot: '',", "url: '',", "idAttribute: '_id',", "constructor() {", "", "},", "parse(response, options) {", "", "},", "defaults: {", "title: null", "},", "validate(attrs, options) {", "if (!attrs.title) {", "return 'Title is reuired';", "}", "}", "});", "", "${2:backboneModelInstance} = new ${1:BackboneModel}();", ""
+        ],
+        "description": "_lbModel"
+    },
+    "_lbModel2": {
+        "prefix": "_lbModel2",
+        "body": [
+            "import { Model } from 'backbone';", "class ${1:ModelName} extends Model {", "constructor(models, options) {", "super(models, options);", "this.urlRoot = 'http://localhost:4000/todos';", "this.url = '';", "this.idAttribute = 'id';", "}", "defaults() {", "return {", "title: '',", "completed: false", "}", "}", "validate(attrs, options) {", "if (!attrs.title) {", "return 'Title is reuired';", "}", "}", "}", "export default ${1:ModelName};", ""
+        ],
+        "description": "_lbModel2"
+    },
+    "_lbCollection": {
+        "prefix": "_lbCollection",
+        "body": [
+            "${1:CollectionModel} = Backbone.Collection.extend({", "model: Model,", "url: '',", "comparator: '',", "constructor() {", "", "},", "parse(response, options) {", "", "},", "});", "${2:CollectionModelInstance} = new ${1:CollectionModel}();", ""
+        ],
+        "description": "_lbCollection"
+    },
+    "_lbCollection2": {
+        "prefix": "_lbCollection2",
+        "body": [
+            "import { Collection } from 'backbone';", "class ${1:CollectionName} extends Collection {", "constructor(models, options) {", "super(models, options);", "this.model = Model;", "this.url = 'http://localhost:4000/todos';", "// Todos are sorted by their original insertion order.", "this.comparator = 'order';", "}", "parse(response, options) {", "", "}", "}", "", "export default new ${1:CollectionName}();", ""
+        ],
+        "description": "_lbCollection2"
+    },
+    "_lbRouter": {
+        "prefix": "_lbRouter",
+        "body": [
+            "${1:AppRouter} = Backbone.Router.extend({", "routes: {", "'help': 'help',", "'search/:query': 'search',", "'search/:query/p:page': 'search'", "},", "constructor() {", "", "},", "open(id) {", "", "},", "execute: function(callback, args, name) {", "if (!loggedIn) {", "goToLogin();", "return false;", "}", "args.push(parseQueryString(args.pop()));", "if (callback) callback.apply(this, args);", "},", "help() {", "", "},", "search(query, page) {", "", "}", "});", "${2:router} = new ${1:AppRouter}();", "Backbone.history.start();", ""
+        ],
+        "description": "_lbRouter"
+    },
+    "_lbView": {
+        "prefix": "_lbView",
+        "body": [
+            "${1:ViewBackbone} = Backbone.View.extend({", "tagName: 'li',", "id: '',", "className: 'document-row',", "el: '',", "model: Model,", "collection: Collection,", "attributes: {", "'data-id': 'abc-def'", "},", "template: _.template('#template'),", "events: {", "'click .icon': 'open',", "'click .button.edit': 'openEditDialog'", "},", "constructor: function() {", "this.listenTo(this.model, 'change', this.render);", "},", "render: function() {", "this.$el.html(this.template(this.model.attributes));", "return this;", "},", "open() {", "", "},", "openEditDialog() {", "", "}", "});", "${2:viewBackbone} = new ${1:ViewBackbone}();", ""
+        ],
+        "description": "_lbView"
+    },
+    "_lbView2": {
+        "prefix": "_lbView2",
+        "body": [
+            "const temp = require('...');", "import { View } from 'backbone';", "class ${1:ViewName} extends View {", "constructor(models, options) {", "super(models, options);", "this.template = _.template(temp);", "this.id = '';", "this.className = '';", "this.model = Model;", "this.collection = Collection;", "this.attributes = {", "'data-id': 'abc-def'", "};", "//code after init is here", "", "}", "", "tagName() {", "return 'li';", "}", "", "events() {", "return {", "'click .toggle': 'toggleCompleted'", "}", "}", "el() {", "return '.todoapp';", "}", "render() {", "", "return this;", "}", "}", "export default ${1:ViewName};", ""
+        ],
+        "description": "_lbView2"
+    }
+}

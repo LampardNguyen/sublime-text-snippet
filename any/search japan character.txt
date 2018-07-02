@@ -1,0 +1,11 @@
+japan character : [^A-Za-z0-9_<>/=:",A*@#\[\]'+.$! \t\n\\&|\?%{}();-].*
+
+[^\w\s<>"=\-/.,!#{}+$()';:\[\]]
+
+pattern number : [\d]{4}+\.+[\d]{5} //9999.99999
+
+
+all autocomplete
+css extend
+ionic complete
+hypnotoadSVN
